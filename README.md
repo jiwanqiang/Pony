@@ -1,5 +1,5 @@
-Pony - A Library which collects many useful classes and UI for iOS development.
-======
+##Pony##
+> A Library which collects many useful classes and UI for iOS development.
 
 ###LICENSE###
 > 该工程所遵循的协议，您可以在此协议的基础上进行使用
