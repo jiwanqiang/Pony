@@ -58,7 +58,7 @@
 	return self;
 }
 
-+ (instancetype)modelParseWithObject:(NSDictionary *)object keys:(NSDictionary *)keys
++ (instancetype)modelParseWithObject:(NSDictionary *)object
 {
 	@autoreleasepool
 	{
@@ -72,9 +72,10 @@
 		
 		NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
 		
+		NSDictionary *keys = [self generateKeys];
 		for (NSString *key in keys.allKeys)
 		{
-			[attributes setObject:(object[keys[key]] ? object[keys[key]] : @"") forKey:key];
+			[attributes setObject:([object valueForKeyPath:keys[key]] ? [object valueForKeyPath:keys[key]] : @"") forKey:key];
 		}
 
 		YFModel *model = [[self alloc] initWithAttributes:attributes];
@@ -83,6 +84,11 @@
 }
 
 #pragma mark - Super Methods
++ (NSDictionary *)generateKeys
+{
+	return nil;
+}
+
 - (NSString *)description
 {
 	@autoreleasepool
@@ -147,8 +153,7 @@
 
 - (NSDictionary *)generateKeys
 {
-	//TO-DO
-	return nil;
+	return [[self class] generateKeys];
 }
 
 @end

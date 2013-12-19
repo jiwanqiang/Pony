@@ -33,11 +33,10 @@
  * 从对象文件根据keys进行解析为Model
  *
  * @param object 对象文件
- * @param keys key值集合，譬如：key值为属性
  *
  * @return YFModel对象
  */
-+ (instancetype)modelParseWithObject:(NSDictionary *)object keys:(NSDictionary *)keys;
++ (instancetype)modelParseWithObject:(NSDictionary *)object;
 
 /**
  * 通过字典文件进行视频节点的初始化，其中字典文件中的key值为属性名
@@ -54,6 +53,13 @@
  * @return NSDictionary key值为属性，value为属性值
  */
 - (NSDictionary *)dictionaryReflectFromAttributes;
+
+/**
+ *  创建本地与服务器之间的映射(重写)
+ *
+ *  @return 字典文件对象 key为本地 value为服务端
+ */
++ (NSDictionary *)generateKeys;
 
 /**
  *  从JSON数据解析为对象文件
@@ -78,7 +84,7 @@
 - (NSString *)XMLString;
 
 /**
- *  创建本地与服务器之间的映射(重写)
+ *  创建本地与服务器之间的映射(可重写)
  *
  *  @return 字典文件对象 key为本地 value为服务端
  */
