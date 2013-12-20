@@ -60,6 +60,11 @@
 
 + (instancetype)modelParseWithObject:(NSDictionary *)object
 {
+	return [self modelParseWithObject:object keys:[self generateKeys]];
+}
+
++ (instancetype)modelParseWithObject:(NSDictionary *)object keys:(NSDictionary *)keys
+{
 	@autoreleasepool
 	{
 		if (!object || ![object isKindOfClass:[NSDictionary class]])
@@ -72,12 +77,11 @@
 		
 		NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
 		
-		NSDictionary *keys = [self generateKeys];
 		for (NSString *key in keys.allKeys)
 		{
 			[attributes setObject:([object valueForKeyPath:keys[key]] ? [object valueForKeyPath:keys[key]] : @"") forKey:key];
 		}
-
+		
 		YFModel *model = [[self alloc] initWithAttributes:attributes];
 		return model;
 	}

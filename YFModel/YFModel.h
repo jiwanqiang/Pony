@@ -30,13 +30,23 @@
 @interface YFModel : NSObject
 
 /**
- * 从对象文件根据keys进行解析为Model
+ * 从对象文件进行解析为Model
  *
  * @param object 对象文件
  *
  * @return YFModel对象
  */
 + (instancetype)modelParseWithObject:(NSDictionary *)object;
+
+/**
+ *  从对象文件根据keys进行解析为Model
+ *
+ *  @param object object 对象文件
+ *  @param keys   本地与服务端映射关系
+ *
+ *  @return YFModel对象
+ */
++ (instancetype)modelParseWithObject:(NSDictionary *)object keys:(NSDictionary *)keys;
 
 /**
  * 通过字典文件进行视频节点的初始化，其中字典文件中的key值为属性名
