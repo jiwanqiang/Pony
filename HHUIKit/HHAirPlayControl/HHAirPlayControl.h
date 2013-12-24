@@ -39,16 +39,10 @@
     CGRect  _frame;
 }
 
-#pragma mark - BackGroundImage For AirPlay Button
-@property (nonatomic, retain) NSString *notDetected; //has no out device
-@property (nonatomic, retain) NSString *detected;  //has out device
-@property (nonatomic, retain) NSString *playing;   //play video by airpay
+@property (nonatomic, retain) NSString *notDetected;
+@property (nonatomic, retain) NSString *detected;
+@property (nonatomic, retain) NSString *playing;
 
-
-- (WQAirPlayView*)initWithFrame:(CGRect)frame
-                   withDetected:(NSString*)detected
-                    notDetected:(NSString*)notDetected
-                        playing:(NSString*)playing;
-
+- (HHAirPlayControl *)initWithFrame:(CGRect)frame withDetected:(NSString*)detected notDetected:(NSString*)notDetected playing:(NSString*)playing;
 
 @end

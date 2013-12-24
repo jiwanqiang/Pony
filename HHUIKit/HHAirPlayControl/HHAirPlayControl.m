@@ -37,7 +37,7 @@
 
 @end
 /////////////////////////////////////////////////////////////////////////
-@implementation WQAirPlayView
+@implementation HHAirPlayControl
 @synthesize notDetected = _notDetected;
 @synthesize detected = _detected;
 @synthesize playing = _playing;
@@ -52,10 +52,10 @@
     [super dealloc];
 }
 
-- (WQAirPlayView*)initWithFrame:(CGRect)frame
-                   withDetected:(NSString*)detected
-                    notDetected:(NSString*)notDetected
-                        playing:(NSString*)playing
+- (HHAirPlayControl *)initWithFrame:(CGRect)frame
+					   withDetected:(NSString*)detected
+						notDetected:(NSString*)notDetected
+							playing:(NSString*)playing
 {
     _frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
     

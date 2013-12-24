@@ -19,15 +19,15 @@
 		BFDFFBE71867EAC9000E6489 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFFBCF1867EAC9000E6489 /* UIKit.framework */; };
 		BFDFFBEF1867EAC9000E6489 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFDFFBED1867EAC9000E6489 /* InfoPlist.strings */; };
 		BFDFFBF11867EAC9000E6489 /* exampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFBF01867EAC9000E6489 /* exampleTests.m */; };
-		BFDFFC261867EB84000E6489 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFBFD1867EB84000E6489 /* NSData+Base64.m */; };
+		BFDFFC261867EB84000E6489 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFBFD1867EB84000E6489 /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BFDFFC271867EB84000E6489 /* NSData+Convert.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFBFF1867EB84000E6489 /* NSData+Convert.m */; };
 		BFDFFC281867EB84000E6489 /* NSFileHandle+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC021867EB84000E6489 /* NSFileHandle+MD5.m */; };
-		BFDFFC291867EB84000E6489 /* NSString+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC051867EB84000E6489 /* NSString+AES.m */; };
+		BFDFFC291867EB84000E6489 /* NSString+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC051867EB84000E6489 /* NSString+AES.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BFDFFC2A1867EB84000E6489 /* NSString+Digest.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC071867EB84000E6489 /* NSString+Digest.m */; };
 		BFDFFC2B1867EB84000E6489 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC091867EB84000E6489 /* NSString+MD5.m */; };
 		BFDFFC2C1867EB84000E6489 /* NSString+Regular.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC0B1867EB84000E6489 /* NSString+Regular.m */; };
 		BFDFFC2D1867EB84000E6489 /* NSString+SHA1.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC0D1867EB84000E6489 /* NSString+SHA1.m */; };
-		BFDFFC2E1867EB84000E6489 /* HHAirPlayControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC111867EB84000E6489 /* HHAirPlayControl.m */; };
+		BFDFFC2E1867EB84000E6489 /* HHAirPlayControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC111867EB84000E6489 /* HHAirPlayControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BFDFFC2F1867EB84000E6489 /* HHPollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC141867EB84000E6489 /* HHPollView.m */; };
 		BFDFFC301867EB84000E6489 /* UIImage+Stretch.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC181867EB84000E6489 /* UIImage+Stretch.m */; };
 		BFDFFC311867EB84000E6489 /* UIView+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC1B1867EB84000E6489 /* UIView+Shake.m */; };
