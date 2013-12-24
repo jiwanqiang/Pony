@@ -1,20 +1,17 @@
 # Pony  [![Build Status](https://api.travis-ci.org/jiwanqiang/Pony.png)](https://travis-ci.org/jiwanqiang/Pony)
 
 ## Origin
-> 起源
 
-该工程为了实现快速解耦，帮助开发者快速部署，从而起名为Poney。寓意为可爱、灵活、敏捷等。
+In order to realize the decoupling, helping developer to quickly deploy, so named Pony. The implication is lovely, flexible, agile, etc.
 
 ## Brief
-> 工程的简介信息
+   
+This library includes four modules:
 
-该工程为个人在开发中的积累，所有的代码均在维护优化中，同时也欢迎大家把自己的东西融入其中。    
-工程主要分为四大模块:
-
-* *UIKit 对UIKit框架的扩展*
-* *YFUIKit Yef框架的简要功能分解*
-* *HHUIKit 实用控件集合，开发中常用到的控件*
-* *Foundation 对Foundation框架的扩展*
+* *UIKit extend the UIKit framework*
+* *YFUIKit Yef framework's brief*
+* *HHUIKit frequent used UI control*
+* *Foundation extend the foundation framework*
 
 ## LICENSE
 Pony is published under MIT License
