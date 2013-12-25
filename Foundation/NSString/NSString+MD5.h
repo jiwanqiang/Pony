@@ -24,6 +24,9 @@
 
 @interface NSString (MD5)
 
-- (NSString *)MD5;
+/**
+ *  calculate the string's MD5 value, output it
+ */
+@property (nonatomic, readonly) NSString *MD5;
 
 @end

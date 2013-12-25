@@ -24,6 +24,9 @@
 
 @interface NSString (SHA1)
 
-- (NSString *)SHA1;
+/**
+ *  calculate the string's SHA1 value, output it
+ */
+@property (nonatomic, readonly) NSString *SHA1;
 
 @end
