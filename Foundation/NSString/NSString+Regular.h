@@ -27,13 +27,16 @@
 @interface NSString (Regular)
 
 /**
- * Match the mobile number which belonged to China.Return the match result.
+ *  Match the mobile number which belonged to China.Return the match result.
+ *
+ *  @return Yes is mobile number
  */
 - (BOOL)isMobileNumber;
 
 /**
- * Match the E-mail address,return the match result.But it should be update,because the top-level
- * domain has been updated.
+ *  Match the E-mail address,return the match result.But it should be update,because the top-level domain has been updated.
+ *
+ *  @return Yes is E-mail address
  */
 - (BOOL)isEmailAddress;
 
