@@ -25,78 +25,82 @@
 #import <Foundation/Foundation.h>
 
 /**
- * 基础模型抽象类，不能直接使用。
+ *  abstract class for Model
  */
 @interface YFModel : NSObject
 
 /**
- * 从对象文件进行解析为Model
+ *  parse the dictionary to YFModel's subclass object
  *
- * @param object 对象文件
+ *  @param object dictionary object
  *
- * @return YFModel对象
+ *  @return instancetype object
  */
 + (instancetype)modelParseWithObject:(NSDictionary *)object;
 
 /**
- *  从对象文件根据keys进行解析为Model
+ *  parse the dictionary to YFModel's subclass object
  *
- *  @param object object 对象文件
- *  @param keys   本地与服务端映射关系
+ *  @param object dictionary object
+ *  @param keys   the map between the local and the remote key
  *
- *  @return YFModel对象
+ *  @return instancetype object
  */
 + (instancetype)modelParseWithObject:(NSDictionary *)object keys:(NSDictionary *)keys;
 
 /**
- * 通过字典文件进行视频节点的初始化，其中字典文件中的key值为属性名
+ *  init object from the attributes's map
  *
- * @param attributes 包含所有属性的字典文件，key值为属性
+ *  @param attributes dictionary object, map between the property and the property's value
  *
- * @return Modle对象
+ *  @return instancetype object
  */
 - (instancetype)initWithAttributes:(NSDictionary *)attributes;
 
 /**
- * 从属性反射一个字典文件
+ *  reflect the attributes to dictionary object
  *
- * @return NSDictionary key值为属性，value为属性值
+ *  @return dictionary object, the key is property, the value is the property's value
  */
 - (NSDictionary *)dictionaryReflectFromAttributes;
 
 /**
- *  创建本地与服务器之间的映射(重写)
+ *  create the map bwtween the local and the remote key
  *
- *  @return 字典文件对象 key为本地 value为服务端
+ *  (subclass must be overwrite this method)
+ *
+ *  @return dictionary object, key is the local property, value is the remote property
  */
 + (NSDictionary *)generateKeys;
 
 /**
- *  从JSON数据解析为对象文件
+ *  parse the JSON object to the property's value(TO-DO)
  *
- *  @param JSON JSON数据
- *  @param keys 属性的key对JSON的key，即key = JSONkey
+ *  @param JSON JSON object
+ *  @param keys the map between the local and the remote key
  */
 - (void)parseWithJSON:(id)JSON keys:(NSDictionary *)keys;
 
 /**
- *  自动生成JSON对象 TO-DO
+ *  auto generate the JSON string(TO-DO)
  *
- *  @return JSON字符串
+ *  @return string object which called JSON
  */
 - (NSString *)JSONString;
 
 /**
- *  自动生成XML串 TO-DO
+ *  auto generate the XML string(TO-DO)
  *
- *  @return XML字符串
+ *  @return string object which called XML
  */
 - (NSString *)XMLString;
 
 /**
- *  创建本地与服务器之间的映射(可重写)
+ *  generate the map between the local and the remote key
  *
- *  @return 字典文件对象 key为本地 value为服务端
+ *  default implement is called the + method which named generateKeys
+ *
+ *  @return dictionary object, key is the local property, value is the remote property
  */
 - (NSDictionary *)generateKeys;
 
