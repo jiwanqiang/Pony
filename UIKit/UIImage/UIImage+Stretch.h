@@ -27,11 +27,11 @@
 @interface UIImage (Stretch)
 
 /**
- *  拉伸图片
+ *  stretch the image
  *
- *  @param capInsets 边缘
+ *  @param capInsets cap insets
  *
- *  @return 新图片
+ *  @return UIImage instance
  */
 - (UIImage *)stretchableImageWithWithCapInsets:(UIEdgeInsets)capInsets NS_AVAILABLE_IOS(4_0);
 

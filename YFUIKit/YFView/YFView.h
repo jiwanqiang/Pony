@@ -25,68 +25,76 @@
 #import <UIKit/UIKit.h>
 
 /**
- * 战舰的基础员工仓室，扩展UIView
+ *  UIView class
  */
 typedef UIView YFView;
 
 @interface UIView (Yef)
 
 /**
- * YFView对象在父视图上显示的x值坐标
+ *  x axis value
  */
 @property (nonatomic, assign) CGFloat x;
 
 /**
- * YFView对象在父视图上显示的y值坐标
+ *  y axis value
  */
 @property (nonatomic, assign) CGFloat y;
 
 /**
- * YFView对象的宽
+ *  width
  */
 @property (nonatomic, assign) CGFloat w;
 
 /**
- * YFView对象的高
+ *  height
  */
 @property (nonatomic, assign) CGFloat h;
 
 /**
- * 从默认nib文件加载视图，默认nib所处bundle为主bundle并且名字与类名相同
- * @return UINib对象
+ *  load nib file, the nib's default name is same to class name
+ *
+ *  @return UINib object
  */
 + (UINib *)nib;
 
 /**
- * 从指定nib文件加载视图
- * @param name nib文件名(NSString对象)
- * @param bundleOrNil NSBundle对象，若为nil则为主bundle对象
- * @return UINib对象
+ *  load the appoint nib file
+ *
+ *  @param nibName     nib file's name
+ *  @param bundleOrNil the bundle of the nib file locate
+ *
+ *  @return UINib object
  */
-+ (UINib *)nibWithNibName:(NSString *)name bundle:(NSBundle *)bundleOrNil;
++ (UINib *)nibWithNibName:(NSString *)nibName bundle:(NSBundle *)bundleOrNil;
 
 /**
- * 默认从UINib对象进行实例化
- * @return instancetype
+ *  initalize from nib file
+ *
+ *  @return instacetype, UIView
  */
 + (instancetype)instantiateFromNib;
 
 /**
- * 设置YFView对象的位置
- * @param position CGPoint变量
+ *  set view's position
+ *
+ *  @param position the view's position
  */
 - (void)setPosition:(CGPoint)position;
 
 /**
- * 设置YFView对象的大小
- * @param size CGSize变量
+ *  set view's size
+ *
+ *  @param size the view's size
  */
 - (void)setSize:(CGSize)size;
 
 /**
- * 验证是否包含指定的view
- * @param view 子视图
- * @return 结果，YES拥有，NO不拥有
+ *  Judge self whether contains view
+ *
+ *  @param view view instance
+ *
+ *  @return YES, contains this view.
  */
 - (BOOL)containsView:(YFView *)view;
 
