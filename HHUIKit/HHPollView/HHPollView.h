@@ -25,19 +25,23 @@
 #import <UIKit/UIKit.h>
 
 /**
- * HHPollView的数据源协议
+ *  HHPollView DataSource Protocol
  */
 @protocol HHPollViewDataSource <NSObject>
 
 /**
- * 页面数
- * @return NSUInteger 页面的个数 >= 0
+ *  Tells the data source to return the number of page of a poll view. (required)
+ *
+ *  @return the number of pages
  */
 - (NSUInteger)numberOfPages;
 
 /**
- * 加载当前索引页面的视图
- * @param index 要显示的索引值
+ *  Asks the data source for a page to insert in a particular location of the poll view. (required)
+ *
+ *  @param index display index
+ *
+ *  @return UIView instance
  */
 - (UIView *)pageAtIndex:(NSUInteger)index;
 
@@ -46,60 +50,71 @@
 @protocol HHPollViewDelegate;
 
 /**
- * 焦点图轮播
+ * HHPollView which implements the infinite loop style
  */
-@interface HHPollView : UIView
+@interface HHPollView : UIView <UITableViewDataSource>
 
 /**
- * 轮询时间
+ *  The interval of the loop.
  */
 @property (nonatomic, assign) NSTimeInterval timerInterval;
 
+/**
+ *  The object that acts as the delegate of the receiving poll view.
+ */
 @property (nonatomic, assign) id<HHPollViewDelegate> delegate;
 
+/**
+ *  The object that acts as the data source of the receiving poll view.
+ */
 @property (nonatomic, assign) id<HHPollViewDataSource> dataSource;
 
 /**
- * 当前页面的索引值
+ *  The index of the selected page in the receiving poll view.
  */
 @property (nonatomic, readonly) NSInteger currentIndex;
 
 /**
- * 刷新数据
+ *  Reloads the page of the receiver.
  */
 - (void)reloadData;
 
 /**
- * 开启自动轮播
- * @return result YES代表成功
+ *  Start auto running.
+ *
+ *  @return YES, success
  */
 - (BOOL)startAutoRun;
 
 /**
- * 关闭自动轮播
- * @return result YES代表成功
+ *  Stop auto running.
+ *
+ *  @return YES, success
  */
 - (BOOL)stopAutoRun;
 
 @end
 
 /**
- * HHPollView的代理协议
+ *  HHPollView Delegate Protocol
  */
 @protocol HHPollViewDelegate <NSObject>
 
 @optional
+
 /**
- * 当前的PollView被选择项的索引值，回调该函数
- * @param pollView HHPollView实例，内部回传
- * @param index	当前被选择项的索引值，内部回传
+ *  Tells the delegate that the specified row is now selected.
+ *
+ *  @param pollView current pollview
+ *  @param index    current index which be selected
  */
 - (void)pollView:(HHPollView *)pollView didSelectItemAtIndex:(NSUInteger)index;
 
 /**
- * 当前页面的索引值改变时，回调该函数
- * @param pollView HHPollView实例，内部回传
- * @param index	改变后的索引值，内部回传
+ *  Tells the delgate that the currentIndex is changed.
+ *
+ *  @param pollView pollview instance
+ *  @param index    changed index
  */
 - (void)pollView:(HHPollView *)pollView didChangeItemAtIndex:(NSUInteger)index;
 
