@@ -52,7 +52,7 @@
 /**
  * HHPollView which implements the infinite loop style
  */
-@interface HHPollView : UIView <UITableViewDataSource>
+@interface HHPollView : UIView
 
 /**
  *  The interval of the loop.
@@ -80,18 +80,18 @@
 - (void)reloadData;
 
 /**
- *  Start auto running.
+ *  Begin auto running of the receiver.
  *
  *  @return YES, success
  */
-- (BOOL)startAutoRun;
+- (BOOL)beginAutoRun;
 
 /**
- *  Stop auto running.
+ *  Conclude auto running of the receiver.
  *
  *  @return YES, success
  */
-- (BOOL)stopAutoRun;
+- (BOOL)endAutoRun;
 
 @end
 

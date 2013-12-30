@@ -45,7 +45,7 @@
 - (void)dealloc
 {
 	self.currentViews = nil;
-	[self stopAutoRun];
+	[self endAutoRun];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -91,7 +91,7 @@
 	}
 	else
 	{
-		[self startAutoRun];
+		[self beginAutoRun];
 	}
 }
 
@@ -197,14 +197,14 @@
 {
 	int x = scrollView.contentOffset.x;
 	
-	//往下翻
+	//next page
 	if(x >= (2*self.frame.size.width))
 	{
 		_currentIndex = [self validPageValue:_currentIndex+1];
 		[self loadData];
 	}
 	
-	//往上翻
+	//pre page
 	if(x <= 0)
 	{
 		_currentIndex = [self validPageValue:_currentIndex-1];
@@ -228,8 +228,9 @@
 	}
 }
 
-- (BOOL)startAutoRun
+- (BOOL)beginAutoRun
 {
+	[self endAutoRun];
 	self.timer = [NSTimer timerWithTimeInterval:_timerInterval target:self selector:@selector(autoScroll) userInfo:nil repeats:YES];
 	if (self.timer)
 	{
@@ -240,7 +241,7 @@
 	return NO;
 }
 
-- (BOOL)stopAutoRun
+- (BOOL)endAutoRun
 {
 	if ([self.timer isValid])
 	{
