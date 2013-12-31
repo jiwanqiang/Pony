@@ -22,6 +22,10 @@
 //  THE SOFTWARE.
 //
 
+#if __has_feature(objc_arc)
+	#error This file must be compiled with MRC. Use -fno-objc-arc flag (or convert project to MRC).
+#endif
+
 #import "HHAirPlayControl.h"
 #import <AudioToolbox/AudioToolbox.h>
 
@@ -82,8 +86,7 @@
 #pragma mark -
 - (void)setAirPlayButtonSelected:(BOOL)selected
 {
-    NSLog(@"%s\t%d",__FUNCTION__,__LINE__);
-    UIImage* image;
+    UIImage *image;
     if (selected) {
         image = [UIImage imageNamed:_playing];
     }else {
@@ -93,9 +96,9 @@
     [_airPlayButton setImage:image forState:UIControlStateHighlighted];
     [_airPlayButton setImage:image forState:UIControlStateSelected];
 }
+
 - (BOOL)isAirPlayActive
 {
-    NSLog(@"%s\t%d",__FUNCTION__,__LINE__);
     CFDictionaryRef currentRouteDescriptionDictionary = nil;
     
     UInt32 dataSize = sizeof(currentRouteDescriptionDictionary);
@@ -116,7 +119,7 @@
 /////////////////////////////////////////////////////////////////////////
 - (void)detectOutDevice
 {
-    NSLog(@"%s\t%d",__FUNCTION__,__LINE__);
+    
     _isDetected = FALSE;
     _serviceBrowser = [[NSNetServiceBrowser alloc] init];
     [_serviceBrowser setDelegate:self];
@@ -134,8 +137,6 @@
 /////////////////////////////////////////////////////////////////////////
 - (void)setAirPlayButtonAvailable:(BOOL)available
 {
-    NSLog(@"%s\t%d",__FUNCTION__,__LINE__);
-    
     CGRect frame = CGRectMake(_frame.origin.x-7, _frame.origin.y-2, _frame.size.width, _frame.size.height);
     _volumeView = [[MPVolumeView alloc] initWithFrame:frame];
     [_volumeView setShowsVolumeSlider:NO];
@@ -151,8 +152,6 @@
         }
     }
     
-//    [_airPlayButton setHidden:YES];
-    
     UIImage *image = [UIImage imageNamed:_detected];
     [_mpButton setImage:image forState:UIControlStateNormal];
     [_mpButton setImage:image forState:UIControlStateHighlighted];
@@ -161,7 +160,7 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     
-    NSLog(@"%s\t%d",__FUNCTION__,__LINE__);
+    
     NSLog(@"%@",change);
     if (object == _mpButton && [[change valueForKey:NSKeyValueChangeNewKey] intValue] == 1) {
         [self setMPButtonSelected:NO];
@@ -177,7 +176,7 @@
 
 - (void)netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didFindService:(NSNetService *)aNetService moreComing:(BOOL)moreComing
 {
-    NSLog(@"%s\t%d",__FUNCTION__,__LINE__);
+    
     _isDetected = YES;
     [self setAirPlayButtonAvailable:_isDetected];
     
@@ -194,7 +193,7 @@
 
 - (void)netServiceBrowserDidStopSearch:(NSNetServiceBrowser *)aNetServiceBrowser
 {
-    NSLog(@"%s\t%d",__FUNCTION__,__LINE__);
+    
     
 }
 
