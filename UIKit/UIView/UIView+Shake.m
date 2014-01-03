@@ -22,6 +22,10 @@
 //  THE SOFTWARE.
 //
 
+#if __has_feature(objc_arc)
+	#error This file must be compiled with MRC. Use -fno-objc-arc flag (or convert project to ARC).
+#endif
+
 #import "UIView+Shake.h"
 #import <objc/runtime.h>
 
@@ -116,7 +120,7 @@
 #endif
 	
 #if defined(RANDOM_SHAKE) && RANDOM_SHAKE
-	int r = arc4random() % (int)(SHAKETIME*100);
+	int r = arc4random() % (int)(SHAKETIME * 100);
 	tI = r / 100.0f;
 #endif
 	
@@ -145,7 +149,7 @@
 	if (!self.isEnd)
 	{
 		[UIView beginAnimations:nil context:nil];
-		[UIView setAnimationDuration:SHAKETIME/2.0f];
+		[UIView setAnimationDuration:SHAKETIME / 2.0f];
 		[UIView setAnimationDelegate:self];
 		[UIView setAnimationDidStopSelector:@selector(shakeWithViewAnimation)];
 		CGAffineTransform tL = CGAffineTransformMakeRotation(degreesToRadians(-RADIUS));
@@ -172,13 +176,7 @@
 {
 	CAKeyframeAnimation *keyAn = [CAKeyframeAnimation animationWithKeyPath:@"transform.rotation.z"];
 	[keyAn setDuration:SHAKETIME];
-	NSArray *array = [[NSArray alloc] initWithObjects:
-					  [NSNumber numberWithFloat:degreesToRadians(0.0f)],
-					  [NSNumber numberWithFloat:degreesToRadians(-RADIUS)],
-					  [NSNumber numberWithFloat:degreesToRadians(0.0f)],
-					  [NSNumber numberWithFloat:degreesToRadians(RADIUS)],
-					  [NSNumber numberWithFloat:degreesToRadians(0.0f)],
-					  nil];
+	NSArray *array = @[@(degreesToRadians(0.f)), @(degreesToRadians(-RADIUS)), @(degreesToRadians(0.0f)), @(degreesToRadians(RADIUS)), @(degreesToRadians(0.0f))];
 	[keyAn setValues:array];
 	[array release], array = nil;
 	
