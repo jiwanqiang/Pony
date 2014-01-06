@@ -110,7 +110,7 @@
 }
 #endif
 
-- (void)startShake
+- (void)beginShaking
 {
 	NSTimeInterval tI = 0.0f;
 #if defined(SHAKE_UIVIEW_ANIMATION) && SHAKE_UIVIEW_ANIMATION
@@ -131,7 +131,7 @@
 #endif
 }
 
-- (void)stopShake
+- (void)endShaking
 {
 	[NSObject cancelPreviousPerformRequestsWithTarget:self];//fix bug:stop random animation
 #if defined(SHAKE_UIVIEW_ANIMATION) && SHAKE_UIVIEW_ANIMATION

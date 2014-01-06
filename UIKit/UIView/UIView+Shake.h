@@ -39,11 +39,11 @@
  * Start shake with animation, if the instance is kind of class UIImageView, it will be auto
  * antialiased the image.
  */
-- (void)startShake;
+- (void)beginShaking;
 
 /**
  * Stop shake.
  */
-- (void)stopShake;
+- (void)endShaking;
 
 @end
