@@ -26,14 +26,13 @@
 
 typedef struct RotateTree
 {
-  UIDeviceOrientation fromOrientation;
-  UIDeviceOrientation toOrientation;
-  UIInterfaceOrientation statusBarOrientation;
+	UIDeviceOrientation fromOrientation;
+	UIDeviceOrientation toOrientation;
+	UIInterfaceOrientation statusBarOrientation;
 }RotateTree;
 
 RotateTree rotateTreeDefault(void);
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 @interface UIViewController (Rotate)
 
