@@ -55,7 +55,7 @@
 @interface HHPollView : UIView
 
 /**
- *  The interval of the loop.
+ *  The interval of the loop. Default value is 5 seconds
  */
 @property (nonatomic, assign) NSTimeInterval timerInterval;
 

@@ -29,6 +29,9 @@
 #endif
 
 @interface HHPollView () <UIScrollViewDelegate>
+{
+	BOOL _isAnimations;
+}
 
 @property (nonatomic, strong) NSTimer *timer;
 
@@ -69,6 +72,9 @@
 #pragma mark - Private Methods
 - (void)initialize
 {
+	_isAnimations = NO;
+	_timerInterval = 5;
+	
 	_scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
 	_scrollView.delegate = self;
 	_scrollView.pagingEnabled = YES;
@@ -116,15 +122,16 @@
 	
 	@autoreleasepool
 	{
-		for (int i = 0; i < 3; i++)
+		int visiableCount = (self.numberOfPages >= 2) ? 3 : 1;
+		for (int i = 0; i < visiableCount; i++)
 		{
 			UIView *v = self.currentViews[i];
 			v.userInteractionEnabled = YES;
+			v.frame = CGRectOffset(v.frame, v.frame.size.width * i, 0);
 			
 			UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
 			[v addGestureRecognizer:singleTap];
 			
-			v.frame = CGRectOffset(v.frame, v.frame.size.width * i, 0);
 			[_scrollView addSubview:v];
 		}
 	}
@@ -167,7 +174,7 @@
 
 - (void)handleTap:(UITapGestureRecognizer *)tap
 {
-	if (tap.state == UIGestureRecognizerStateEnded)
+	if ( (tap.state == UIGestureRecognizerStateEnded) && !_isAnimations )
 	{
 		if ([_delegate respondsToSelector:@selector(pollView:didSelectItemAtIndex:)])
 		{
@@ -195,21 +202,23 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-	int x = scrollView.contentOffset.x;
+	_isAnimations = YES;
 	
-	//next page
-	if(x >= (2*self.frame.size.width))
+	int x = scrollView.contentOffset.x;
+	if( x >= (2 * self.frame.size.width) )
 	{
+		//next page
 		_currentIndex = [self validPageValue:_currentIndex+1];
 		[self loadData];
 	}
-	
-	//pre page
-	if(x <= 0)
+	else if(x <= 0)
 	{
+		//pre page
 		_currentIndex = [self validPageValue:_currentIndex-1];
 		[self loadData];
 	}
+	
+	_isAnimations = NO;
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
@@ -221,6 +230,7 @@
 - (void)reloadData
 {
 	self.numberOfPages = [_dataSource numberOfPages];
+	
 	if (self.numberOfPages != 0)
 	{
 		_currentIndex = 0;
@@ -231,6 +241,7 @@
 - (BOOL)beginAutoRun
 {
 	[self endAutoRun];
+	
 	self.timer = [NSTimer timerWithTimeInterval:_timerInterval target:self selector:@selector(autoScroll) userInfo:nil repeats:YES];
 	if (self.timer)
 	{
@@ -248,6 +259,7 @@
 		[self.timer invalidate];
 	}
 	self.timer = nil;
+	
 	return YES;
 }
 
