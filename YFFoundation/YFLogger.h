@@ -51,7 +51,7 @@
 + (YFLogger *)sharedInstance;
 
 /**
- * output the information into console
+ * output the information into console.
  *
  * @param file the file's path
  * @param line line number

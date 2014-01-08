@@ -1,5 +1,5 @@
 //
-//  YefLogger.m
+//  YefLogger.mm
 //
 //  Copyright (c) 2013 Wanqiang Ji
 //
