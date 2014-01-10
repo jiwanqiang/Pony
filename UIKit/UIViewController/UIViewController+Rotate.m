@@ -26,18 +26,6 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 
-
-RotateTree rotateTreeDefault(void)
-{
-	RotateTree tree;
-	tree.fromOrientation = UIDeviceOrientationPortrait;
-	tree.toOrientation = UIDeviceOrientationUnknown;
-	tree.statusBarOrientation = UIInterfaceOrientationPortrait;
-	return tree;
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
 @implementation UIViewController (Rotate)
 
 - (void)rotateFromPortraitToLandscapeRight:(BOOL)yes
@@ -61,10 +49,13 @@ RotateTree rotateTreeDefault(void)
 		 self.view.transform = CGAffineTransformRotate(transform, yes ? M_PI/2 : -M_PI/2);
 	 }];
 	
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
 	if ([self respondsToSelector:@selector(hideTabBar:)])
 	{
 		objc_msgSend(self, @selector(hideTabBar:), YES);
 	}
+#pragma clang diagnostic pop
 }
 
 - (void)rotateFromLandscapeToPortrait
@@ -79,28 +70,13 @@ RotateTree rotateTreeDefault(void)
 	
 	self.view.frame = CGRectMake(0, 0, CGRectGetWidth(UIScreen.mainScreen.bounds), CGRectGetHeight(UIScreen.mainScreen.bounds) - 20);
 	
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
 	if ([self respondsToSelector:@selector(hideTabBar:)])
 	{
 		objc_msgSend(self, @selector(hideTabBar:), NO);
 	}
-}
-
-- (void)rotateFromLandscapeToPortraitTest
-{
-	[[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait animated:YES];
-	
-	[UIView animateWithDuration:UIApplication.sharedApplication.statusBarOrientationAnimationDuration
-					 animations:^(void)
-	 {
-		 self.view.transform = CGAffineTransformIdentity;
-	 }];
-	
-	self.view.frame = CGRectMake(0, 0, CGRectGetWidth(UIScreen.mainScreen.applicationFrame), CGRectGetHeight(UIScreen.mainScreen.bounds));
-	
-	if ([self respondsToSelector:@selector(hideTabBar:)])
-	{
-		objc_msgSend(self, @selector(hideTabBar:), NO);
-	}
+#pragma clang diagnostic pop
 }
 
 - (void)rotateFromLandscapeLeftToRight:(BOOL)yes
@@ -122,10 +98,13 @@ RotateTree rotateTreeDefault(void)
 		 self.view.transform = CGAffineTransformRotate(transform, yes ? M_PI/2 : -M_PI/2);;
 	 }];
 	
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
 	if ([self respondsToSelector:@selector(hideTabBar:)])
 	{
 		objc_msgSend(self, @selector(hideTabBar:), YES);
 	}
+#pragma clang diagnostic pop
 }
 
 @end

@@ -24,21 +24,12 @@
 
 #import <UIKit/UIKit.h>
 
-typedef struct RotateTree
-{
-	UIDeviceOrientation fromOrientation;
-	UIDeviceOrientation toOrientation;
-	UIInterfaceOrientation statusBarOrientation;
-}RotateTree;
-
-RotateTree rotateTreeDefault(void);
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ *  Deprecated in iOS7
+ */
 @interface UIViewController (Rotate)
 
 - (void)rotateFromLandscapeToPortrait;
-
-- (void)rotateFromLandscapeToPortraitTest;
 
 - (void)rotateFromLandscapeLeftToRight:(BOOL)yes;
 
