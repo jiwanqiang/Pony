@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF0B370C18858329003936B5 /* YFSystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0B370A18858329003936B5 /* YFSystemInfo.m */; };
 		BF1B7C711880D9190049AF77 /* YFSandbox.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1B7C6F1880D9190049AF77 /* YFSandbox.m */; };
 		BFA2A900187DAABF0085F8E8 /* YFLogger.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFA2A8FD187DAABF0085F8E8 /* YFLogger.mm */; };
 		BFA2A901187DAABF0085F8E8 /* YFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA2A8FF187DAABF0085F8E8 /* YFModel.m */; };
@@ -50,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF0B370A18858329003936B5 /* YFSystemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFSystemInfo.m; sourceTree = "<group>"; };
+		BF0B370B18858329003936B5 /* YFSystemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFSystemInfo.h; sourceTree = "<group>"; };
 		BF1B7C6F1880D9190049AF77 /* YFSandbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFSandbox.m; sourceTree = "<group>"; };
 		BF1B7C701880D9190049AF77 /* YFSandbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFSandbox.h; sourceTree = "<group>"; };
 		BFA2A8FC187DAABF0085F8E8 /* YFLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFLogger.h; sourceTree = "<group>"; };
@@ -131,12 +134,14 @@
 		BFA2A8FB187DAABF0085F8E8 /* YFFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				BF1B7C701880D9190049AF77 /* YFSandbox.h */,
-				BF1B7C6F1880D9190049AF77 /* YFSandbox.m */,
 				BFA2A8FC187DAABF0085F8E8 /* YFLogger.h */,
 				BFA2A8FD187DAABF0085F8E8 /* YFLogger.mm */,
 				BFA2A8FE187DAABF0085F8E8 /* YFModel.h */,
 				BFA2A8FF187DAABF0085F8E8 /* YFModel.m */,
+				BF1B7C701880D9190049AF77 /* YFSandbox.h */,
+				BF1B7C6F1880D9190049AF77 /* YFSandbox.m */,
+				BF0B370B18858329003936B5 /* YFSystemInfo.h */,
+				BF0B370A18858329003936B5 /* YFSystemInfo.m */,
 			);
 			name = YFFoundation;
 			path = ../../YFFoundation;
@@ -454,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFDFFC321867EB84000E6489 /* UIViewController+Rotate.m in Sources */,
+				BF0B370C18858329003936B5 /* YFSystemInfo.m in Sources */,
 				BFDFFBDC1867EAC9000E6489 /* AppDelegate.m in Sources */,
 				BFDFFC311867EB84000E6489 /* UIView+Shake.m in Sources */,
 				BFDFFC2C1867EB84000E6489 /* NSString+Regular.m in Sources */,
