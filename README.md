@@ -38,5 +38,5 @@ Pony is published under MIT License
     THE SOFTWARE.
 
 ## JOIN US
-*If you want join us, please contact me on [Weibo](http://weibo.com/jiwanqiang) or [Twitter](http://twitter.com/jiwanqiang).*
+* If you want to join us, please contact me on [Weibo](http://weibo.com/jiwanqiang) or [Twitter](http://twitter.com/jiwanqiang).
     
