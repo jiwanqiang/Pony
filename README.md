@@ -8,10 +8,11 @@ In order to realize the decoupling, helping developer to quickly deploy, so name
    
 This library includes four modules:
 
-* *UIKit extend the UIKit framework*
-* *YFUIKit Yef framework's brief*
-* *HHUIKit frequent used UI control*
-* *Foundation extend the foundation framework*
+* *UIKit*  extend the UIKit framework
+* *YFUIKit* Yef framework's brief
+* *HHUIKit* frequent used UI control
+* *Foundation* extend the foundation framework
+* *YFFoundation* foundatin of Yef framework
 
 ## LICENSE
 Pony is published under MIT License
@@ -36,4 +37,6 @@ Pony is published under MIT License
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
     THE SOFTWARE.
 
+## JOIN US
+*If you want join us, please contact me on [Weibo](http://weibo.com/jiwanqiang) or [Twitter](http://twitter.com/jiwanqiang).*
     
