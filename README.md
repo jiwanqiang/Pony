@@ -12,7 +12,7 @@ This library includes four modules:
 * *YFUIKit* Yef framework's brief
 * *HHUIKit* frequent used UI control
 * *Foundation* extend the foundation framework
-* *YFFoundation* foundatin of Yef framework
+* *YFFoundation* foundation of Yef framework
 
 ## LICENSE
 Pony is published under MIT License
