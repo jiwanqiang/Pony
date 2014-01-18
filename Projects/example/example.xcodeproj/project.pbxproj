@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BF0B370C18858329003936B5 /* YFSystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0B370A18858329003936B5 /* YFSystemInfo.m */; };
 		BF1B7C711880D9190049AF77 /* YFSandbox.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1B7C6F1880D9190049AF77 /* YFSandbox.m */; };
+		BF71FD64188AB2E2007ED956 /* YFView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF71FD62188AB2E2007ED956 /* YFView.m */; };
 		BFA2A900187DAABF0085F8E8 /* YFLogger.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFA2A8FD187DAABF0085F8E8 /* YFLogger.mm */; };
 		BFA2A901187DAABF0085F8E8 /* YFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA2A8FF187DAABF0085F8E8 /* YFModel.m */; };
 		BFA2A903187DACE10085F8E8 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFA2A902187DACE10085F8E8 /* MediaPlayer.framework */; };
@@ -37,7 +38,6 @@
 		BFDFFC301867EB84000E6489 /* UIImage+Stretch.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC181867EB84000E6489 /* UIImage+Stretch.m */; };
 		BFDFFC311867EB84000E6489 /* UIView+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC1B1867EB84000E6489 /* UIView+Shake.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BFDFFC321867EB84000E6489 /* UIViewController+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC1E1867EB84000E6489 /* UIViewController+Rotate.m */; };
-		BFDFFC341867EB84000E6489 /* YFView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC251867EB84000E6489 /* YFView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +55,8 @@
 		BF0B370B18858329003936B5 /* YFSystemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFSystemInfo.h; sourceTree = "<group>"; };
 		BF1B7C6F1880D9190049AF77 /* YFSandbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFSandbox.m; sourceTree = "<group>"; };
 		BF1B7C701880D9190049AF77 /* YFSandbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFSandbox.h; sourceTree = "<group>"; };
+		BF71FD62188AB2E2007ED956 /* YFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFView.m; sourceTree = "<group>"; };
+		BF71FD63188AB2E2007ED956 /* YFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFView.h; sourceTree = "<group>"; };
 		BFA2A8FC187DAABF0085F8E8 /* YFLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFLogger.h; sourceTree = "<group>"; };
 		BFA2A8FD187DAABF0085F8E8 /* YFLogger.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = YFLogger.mm; sourceTree = "<group>"; };
 		BFA2A8FE187DAABF0085F8E8 /* YFModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFModel.h; sourceTree = "<group>"; };
@@ -102,8 +104,6 @@
 		BFDFFC1B1867EB84000E6489 /* UIView+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shake.m"; sourceTree = "<group>"; };
 		BFDFFC1D1867EB84000E6489 /* UIViewController+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Rotate.h"; sourceTree = "<group>"; };
 		BFDFFC1E1867EB84000E6489 /* UIViewController+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Rotate.m"; sourceTree = "<group>"; };
-		BFDFFC241867EB84000E6489 /* YFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFView.h; sourceTree = "<group>"; };
-		BFDFFC251867EB84000E6489 /* YFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,19 +336,11 @@
 		BFDFFC221867EB84000E6489 /* YFUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				BFDFFC231867EB84000E6489 /* YFView */,
+				BF71FD63188AB2E2007ED956 /* YFView.h */,
+				BF71FD62188AB2E2007ED956 /* YFView.m */,
 			);
 			name = YFUIKit;
 			path = ../../YFUIKit;
-			sourceTree = "<group>";
-		};
-		BFDFFC231867EB84000E6489 /* YFView */ = {
-			isa = PBXGroup;
-			children = (
-				BFDFFC241867EB84000E6489 /* YFView.h */,
-				BFDFFC251867EB84000E6489 /* YFView.m */,
-			);
-			path = YFView;
 			sourceTree = "<group>";
 		};
 		BFDFFC351867EB8B000E6489 /* Pony */ = {
@@ -467,13 +459,13 @@
 				BFDFFC2B1867EB84000E6489 /* NSString+MD5.m in Sources */,
 				BFDFFBD81867EAC9000E6489 /* main.m in Sources */,
 				BFDFFC2A1867EB84000E6489 /* NSString+Digest.m in Sources */,
+				BF71FD64188AB2E2007ED956 /* YFView.m in Sources */,
 				BF1B7C711880D9190049AF77 /* YFSandbox.m in Sources */,
 				BFDFFC2E1867EB84000E6489 /* HHAirPlayControl.m in Sources */,
 				BFDFFC2D1867EB84000E6489 /* NSString+SHA1.m in Sources */,
 				BFDFFC271867EB84000E6489 /* NSData+Convert.m in Sources */,
 				BFDFFC2F1867EB84000E6489 /* HHPollView.m in Sources */,
 				BFDFFC301867EB84000E6489 /* UIImage+Stretch.m in Sources */,
-				BFDFFC341867EB84000E6489 /* YFView.m in Sources */,
 				BFA2A901187DAABF0085F8E8 /* YFModel.m in Sources */,
 				BFDFFC281867EB84000E6489 /* NSFileHandle+MD5.m in Sources */,
 				BFA2A900187DAABF0085F8E8 /* YFLogger.mm in Sources */,
