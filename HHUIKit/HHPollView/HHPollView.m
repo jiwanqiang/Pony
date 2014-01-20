@@ -91,14 +91,17 @@
 
 - (void)resetTimerState
 {
-	if ([_timer isValid])
-	{
-		[_timer invalidate];
-	}
-	else
-	{
-		[self beginAutoRun];
-	}
+    if (self.timer)
+    {
+        if ([_timer isValid])
+        {
+            [_timer invalidate];
+        }
+        else
+        {
+            [self beginAutoRun];
+        }
+    }
 }
 
 - (void)removeSubviewsOfSuper:(UIView*)view
@@ -160,11 +163,11 @@
 
 - (int)validPageValue:(NSInteger)value
 {
-	if(value == -1)
+	if (value == -1)
 	{
 		value = self.numberOfPages - 1;
 	}
-	else if(value == self.numberOfPages)
+	else if (value == self.numberOfPages)
 	{
 		value = 0;
 	}
@@ -186,18 +189,12 @@
 #pragma mark - UIScrollView Delegate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-	if (self.timer)
-	{
-		[self resetTimerState];
-	}
+    [self resetTimerState];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-	if (self.timer)
-	{
-		[self resetTimerState];
-	}
+    [self resetTimerState];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -205,13 +202,13 @@
 	_isAnimations = YES;
 	
 	int x = scrollView.contentOffset.x;
-	if( x >= (2 * self.frame.size.width) )
+	if ( x >= (2 * self.frame.size.width) )
 	{
 		//next page
 		_currentIndex = [self validPageValue:_currentIndex+1];
 		[self loadData];
 	}
-	else if(x <= 0)
+	else if (x <= 0)
 	{
 		//pre page
 		_currentIndex = [self validPageValue:_currentIndex-1];
