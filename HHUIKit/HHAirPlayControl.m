@@ -29,7 +29,7 @@
 #import "HHAirPlayControl.h"
 #import <AudioToolbox/AudioToolbox.h>
 
-/////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 @interface HHAirPlayControl()<NSNetServiceBrowserDelegate,NSNetServiceDelegate>
 
 - (void)initAirButtonWithFrame:(CGRect)frame;
@@ -40,7 +40,8 @@
 - (void)detectOutDevice;
 
 @end
-/////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 @implementation HHAirPlayControl
 @synthesize notDetected = _notDetected;
 @synthesize detected = _detected;
@@ -64,7 +65,8 @@
     _frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
     
     self = [super initWithFrame:frame];
-    if (self) {
+    if (self)
+    {
         self.detected = detected;
         self.notDetected = notDetected;
         self.playing = playing;
@@ -87,11 +89,15 @@
 - (void)setAirPlayButtonSelected:(BOOL)selected
 {
     UIImage *image;
-    if (selected) {
+    if (selected)
+    {
         image = [UIImage imageNamed:_playing];
-    }else {
+    }
+    else
+    {
         image = [UIImage imageNamed:_notDetected];
     }
+    
     [_airPlayButton setImage:image forState:UIControlStateNormal];
     [_airPlayButton setImage:image forState:UIControlStateHighlighted];
     [_airPlayButton setImage:image forState:UIControlStateSelected];
@@ -105,9 +111,11 @@
     
     AudioSessionGetProperty(kAudioSessionProperty_AudioRouteDescription, &dataSize, &currentRouteDescriptionDictionary);
     
-    if (currentRouteDescriptionDictionary) {
+    if (currentRouteDescriptionDictionary)
+    {
         CFArrayRef outputs = CFDictionaryGetValue(currentRouteDescriptionDictionary, kAudioSession_AudioRouteKey_Outputs);
-        if(CFArrayGetCount(outputs) > 0) {
+        if(CFArrayGetCount(outputs) > 0)
+        {
             CFDictionaryRef currentOutput = CFArrayGetValueAtIndex(outputs, 0);
             CFStringRef outputType = CFDictionaryGetValue(currentOutput, kAudioSession_AudioRouteKey_Type);
             return (CFStringCompare(outputType, kAudioSessionOutputRoute_AirPlay, 0) == kCFCompareEqualTo);
@@ -119,7 +127,6 @@
 /////////////////////////////////////////////////////////////////////////
 - (void)detectOutDevice
 {
-    
     _isDetected = FALSE;
     _serviceBrowser = [[NSNetServiceBrowser alloc] init];
     [_serviceBrowser setDelegate:self];
@@ -134,7 +141,7 @@
     [_mpButton setImage:image forState:UIControlStateHighlighted];
     [_mpButton setImage:image forState:UIControlStateSelected];
 }
-/////////////////////////////////////////////////////////////////////////
+
 - (void)setAirPlayButtonAvailable:(BOOL)available
 {
     CGRect frame = CGRectMake(_frame.origin.x-7, _frame.origin.y-2, _frame.size.width, _frame.size.height);
@@ -142,8 +149,10 @@
     [_volumeView setShowsVolumeSlider:NO];
     [self addSubview:_volumeView];
     
-    for (id current in _volumeView.subviews){
-        if([current isKindOfClass:[UIButton class]]) {
+    for (id current in _volumeView.subviews)
+    {
+        if([current isKindOfClass:[UIButton class]])
+        {
             UIButton *mpButton = (UIButton*)current;
             [mpButton setFrame:_frame];
             
@@ -158,51 +167,12 @@
     [_mpButton setImage:image forState:UIControlStateSelected];
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    
-    
-    NSLog(@"%@",change);
-    if (object == _mpButton && [[change valueForKey:NSKeyValueChangeNewKey] intValue] == 1) {
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if (object == _mpButton && [[change valueForKey:NSKeyValueChangeNewKey] intValue] == 1)
+    {
         [self setMPButtonSelected:NO];
     }
 }
-/////////////////////////////////////////////////////////////////////////
-
-#pragma mark - NetServiceBrowserDelegate Methods
-- (void)netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didNotSearch:(NSDictionary *)errorDict
-{
-    NSLog(@"%s\t%d\%@",__FUNCTION__,__LINE__,errorDict);
-}
-
-- (void)netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didFindService:(NSNetService *)aNetService moreComing:(BOOL)moreComing
-{
-    
-    _isDetected = YES;
-    [self setAirPlayButtonAvailable:_isDetected];
-    
-    [aNetService setDelegate:self];
-	[aNetService resolveWithTimeout:20.0];
-	[_foundServices addObject:aNetService];
-	
-	if(!moreComing){
-		[_serviceBrowser stop];
-		[_serviceBrowser release];
-		_serviceBrowser = nil;
-	}
-}
-
-- (void)netServiceBrowserDidStopSearch:(NSNetServiceBrowser *)aNetServiceBrowser
-{
-    
-    
-}
-
-#pragma mark - NetServiceDelegate Methods
-- (void)netServiceDidResolveAddress:(NSNetService *)sender
-{
-    NSLog(@"Resolved service: %@:%d", sender.hostName, sender.port);
-}
 
 @end
-#pragma mark - NetServiceBrowser Category End
-/////////////////////////////////////////////////////////////////////////
