@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BF0B370C18858329003936B5 /* YFSystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0B370A18858329003936B5 /* YFSystemInfo.m */; };
 		BF1B7C711880D9190049AF77 /* YFSandbox.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1B7C6F1880D9190049AF77 /* YFSandbox.m */; };
+		BF48ABDE188E48F300A54B8B /* HHAirPlayControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BF48ABDA188E48F300A54B8B /* HHAirPlayControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BF48ABDF188E48F300A54B8B /* HHPollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF48ABDB188E48F300A54B8B /* HHPollView.m */; };
 		BF71FD64188AB2E2007ED956 /* YFView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF71FD62188AB2E2007ED956 /* YFView.m */; };
 		BFA2A900187DAABF0085F8E8 /* YFLogger.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFA2A8FD187DAABF0085F8E8 /* YFLogger.mm */; };
 		BFA2A901187DAABF0085F8E8 /* YFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA2A8FF187DAABF0085F8E8 /* YFModel.m */; };
@@ -33,8 +35,6 @@
 		BFDFFC2B1867EB84000E6489 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC091867EB84000E6489 /* NSString+MD5.m */; };
 		BFDFFC2C1867EB84000E6489 /* NSString+Regular.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC0B1867EB84000E6489 /* NSString+Regular.m */; };
 		BFDFFC2D1867EB84000E6489 /* NSString+SHA1.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC0D1867EB84000E6489 /* NSString+SHA1.m */; };
-		BFDFFC2E1867EB84000E6489 /* HHAirPlayControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC111867EB84000E6489 /* HHAirPlayControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		BFDFFC2F1867EB84000E6489 /* HHPollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC141867EB84000E6489 /* HHPollView.m */; };
 		BFDFFC301867EB84000E6489 /* UIImage+Stretch.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC181867EB84000E6489 /* UIImage+Stretch.m */; };
 		BFDFFC311867EB84000E6489 /* UIView+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC1B1867EB84000E6489 /* UIView+Shake.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BFDFFC321867EB84000E6489 /* UIViewController+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC1E1867EB84000E6489 /* UIViewController+Rotate.m */; };
@@ -55,6 +55,10 @@
 		BF0B370B18858329003936B5 /* YFSystemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFSystemInfo.h; sourceTree = "<group>"; };
 		BF1B7C6F1880D9190049AF77 /* YFSandbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFSandbox.m; sourceTree = "<group>"; };
 		BF1B7C701880D9190049AF77 /* YFSandbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFSandbox.h; sourceTree = "<group>"; };
+		BF48ABDA188E48F300A54B8B /* HHAirPlayControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHAirPlayControl.m; sourceTree = "<group>"; };
+		BF48ABDB188E48F300A54B8B /* HHPollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHPollView.m; sourceTree = "<group>"; };
+		BF48ABDC188E48F300A54B8B /* HHPollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHPollView.h; sourceTree = "<group>"; };
+		BF48ABDD188E48F300A54B8B /* HHAirPlayControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHAirPlayControl.h; sourceTree = "<group>"; };
 		BF71FD62188AB2E2007ED956 /* YFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFView.m; sourceTree = "<group>"; };
 		BF71FD63188AB2E2007ED956 /* YFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFView.h; sourceTree = "<group>"; };
 		BFA2A8FC187DAABF0085F8E8 /* YFLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFLogger.h; sourceTree = "<group>"; };
@@ -94,10 +98,6 @@
 		BFDFFC0B1867EB84000E6489 /* NSString+Regular.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Regular.m"; sourceTree = "<group>"; };
 		BFDFFC0C1867EB84000E6489 /* NSString+SHA1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SHA1.h"; sourceTree = "<group>"; };
 		BFDFFC0D1867EB84000E6489 /* NSString+SHA1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SHA1.m"; sourceTree = "<group>"; };
-		BFDFFC101867EB84000E6489 /* HHAirPlayControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHAirPlayControl.h; sourceTree = "<group>"; };
-		BFDFFC111867EB84000E6489 /* HHAirPlayControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHAirPlayControl.m; sourceTree = "<group>"; };
-		BFDFFC131867EB84000E6489 /* HHPollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHPollView.h; sourceTree = "<group>"; };
-		BFDFFC141867EB84000E6489 /* HHPollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHPollView.m; sourceTree = "<group>"; };
 		BFDFFC171867EB84000E6489 /* UIImage+Stretch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Stretch.h"; sourceTree = "<group>"; };
 		BFDFFC181867EB84000E6489 /* UIImage+Stretch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Stretch.m"; sourceTree = "<group>"; };
 		BFDFFC1A1867EB84000E6489 /* UIView+Shake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shake.h"; sourceTree = "<group>"; };
@@ -270,29 +270,13 @@
 		BFDFFC0E1867EB84000E6489 /* HHUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				BFDFFC0F1867EB84000E6489 /* HHAirPlayControl */,
-				BFDFFC121867EB84000E6489 /* HHPollView */,
+				BF48ABDC188E48F300A54B8B /* HHPollView.h */,
+				BF48ABDB188E48F300A54B8B /* HHPollView.m */,
+				BF48ABDD188E48F300A54B8B /* HHAirPlayControl.h */,
+				BF48ABDA188E48F300A54B8B /* HHAirPlayControl.m */,
 			);
 			name = HHUIKit;
 			path = ../../HHUIKit;
-			sourceTree = "<group>";
-		};
-		BFDFFC0F1867EB84000E6489 /* HHAirPlayControl */ = {
-			isa = PBXGroup;
-			children = (
-				BFDFFC101867EB84000E6489 /* HHAirPlayControl.h */,
-				BFDFFC111867EB84000E6489 /* HHAirPlayControl.m */,
-			);
-			path = HHAirPlayControl;
-			sourceTree = "<group>";
-		};
-		BFDFFC121867EB84000E6489 /* HHPollView */ = {
-			isa = PBXGroup;
-			children = (
-				BFDFFC131867EB84000E6489 /* HHPollView.h */,
-				BFDFFC141867EB84000E6489 /* HHPollView.m */,
-			);
-			path = HHPollView;
 			sourceTree = "<group>";
 		};
 		BFDFFC151867EB84000E6489 /* UIKit */ = {
@@ -455,18 +439,18 @@
 				BFDFFBDC1867EAC9000E6489 /* AppDelegate.m in Sources */,
 				BFDFFC311867EB84000E6489 /* UIView+Shake.m in Sources */,
 				BFDFFC2C1867EB84000E6489 /* NSString+Regular.m in Sources */,
+				BF48ABDF188E48F300A54B8B /* HHPollView.m in Sources */,
 				BFDFFC291867EB84000E6489 /* NSString+AES.m in Sources */,
 				BFDFFC2B1867EB84000E6489 /* NSString+MD5.m in Sources */,
 				BFDFFBD81867EAC9000E6489 /* main.m in Sources */,
 				BFDFFC2A1867EB84000E6489 /* NSString+Digest.m in Sources */,
 				BF71FD64188AB2E2007ED956 /* YFView.m in Sources */,
 				BF1B7C711880D9190049AF77 /* YFSandbox.m in Sources */,
-				BFDFFC2E1867EB84000E6489 /* HHAirPlayControl.m in Sources */,
 				BFDFFC2D1867EB84000E6489 /* NSString+SHA1.m in Sources */,
 				BFDFFC271867EB84000E6489 /* NSData+Convert.m in Sources */,
-				BFDFFC2F1867EB84000E6489 /* HHPollView.m in Sources */,
 				BFDFFC301867EB84000E6489 /* UIImage+Stretch.m in Sources */,
 				BFA2A901187DAABF0085F8E8 /* YFModel.m in Sources */,
+				BF48ABDE188E48F300A54B8B /* HHAirPlayControl.m in Sources */,
 				BFDFFC281867EB84000E6489 /* NSFileHandle+MD5.m in Sources */,
 				BFA2A900187DAABF0085F8E8 /* YFLogger.mm in Sources */,
 				BFDFFC261867EB84000E6489 /* NSData+Base64.m in Sources */,
