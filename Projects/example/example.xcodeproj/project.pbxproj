@@ -15,6 +15,9 @@
 		BFA2A900187DAABF0085F8E8 /* YFLogger.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFA2A8FD187DAABF0085F8E8 /* YFLogger.mm */; };
 		BFA2A901187DAABF0085F8E8 /* YFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA2A8FF187DAABF0085F8E8 /* YFModel.m */; };
 		BFA2A903187DACE10085F8E8 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFA2A902187DACE10085F8E8 /* MediaPlayer.framework */; };
+		BFAA6EEF188F613A00DD03A3 /* UIView+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAA6EE9188F613A00DD03A3 /* UIView+Shake.m */; };
+		BFAA6EF0188F613A00DD03A3 /* UIViewController+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAA6EEA188F613A00DD03A3 /* UIViewController+Rotate.m */; };
+		BFAA6EF1188F613A00DD03A3 /* UIImage+Stretch.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAA6EEC188F613A00DD03A3 /* UIImage+Stretch.m */; };
 		BFDFFBCC1867EAC9000E6489 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFFBCB1867EAC9000E6489 /* Foundation.framework */; };
 		BFDFFBCE1867EAC9000E6489 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFFBCD1867EAC9000E6489 /* CoreGraphics.framework */; };
 		BFDFFBD01867EAC9000E6489 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFFBCF1867EAC9000E6489 /* UIKit.framework */; };
@@ -35,9 +38,6 @@
 		BFDFFC2B1867EB84000E6489 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC091867EB84000E6489 /* NSString+MD5.m */; };
 		BFDFFC2C1867EB84000E6489 /* NSString+Regular.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC0B1867EB84000E6489 /* NSString+Regular.m */; };
 		BFDFFC2D1867EB84000E6489 /* NSString+SHA1.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC0D1867EB84000E6489 /* NSString+SHA1.m */; };
-		BFDFFC301867EB84000E6489 /* UIImage+Stretch.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC181867EB84000E6489 /* UIImage+Stretch.m */; };
-		BFDFFC311867EB84000E6489 /* UIView+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC1B1867EB84000E6489 /* UIView+Shake.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		BFDFFC321867EB84000E6489 /* UIViewController+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFC1E1867EB84000E6489 /* UIViewController+Rotate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +66,12 @@
 		BFA2A8FE187DAABF0085F8E8 /* YFModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFModel.h; sourceTree = "<group>"; };
 		BFA2A8FF187DAABF0085F8E8 /* YFModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFModel.m; sourceTree = "<group>"; };
 		BFA2A902187DACE10085F8E8 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		BFAA6EE9188F613A00DD03A3 /* UIView+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shake.m"; sourceTree = "<group>"; };
+		BFAA6EEA188F613A00DD03A3 /* UIViewController+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Rotate.m"; sourceTree = "<group>"; };
+		BFAA6EEB188F613A00DD03A3 /* UIView+Shake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shake.h"; sourceTree = "<group>"; };
+		BFAA6EEC188F613A00DD03A3 /* UIImage+Stretch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Stretch.m"; sourceTree = "<group>"; };
+		BFAA6EED188F613A00DD03A3 /* UIViewController+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Rotate.h"; sourceTree = "<group>"; };
+		BFAA6EEE188F613A00DD03A3 /* UIImage+Stretch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Stretch.h"; sourceTree = "<group>"; };
 		BFDFFBC81867EAC9000E6489 /* example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDFFBCB1867EAC9000E6489 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BFDFFBCD1867EAC9000E6489 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -98,12 +104,6 @@
 		BFDFFC0B1867EB84000E6489 /* NSString+Regular.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Regular.m"; sourceTree = "<group>"; };
 		BFDFFC0C1867EB84000E6489 /* NSString+SHA1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SHA1.h"; sourceTree = "<group>"; };
 		BFDFFC0D1867EB84000E6489 /* NSString+SHA1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SHA1.m"; sourceTree = "<group>"; };
-		BFDFFC171867EB84000E6489 /* UIImage+Stretch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Stretch.h"; sourceTree = "<group>"; };
-		BFDFFC181867EB84000E6489 /* UIImage+Stretch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Stretch.m"; sourceTree = "<group>"; };
-		BFDFFC1A1867EB84000E6489 /* UIView+Shake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shake.h"; sourceTree = "<group>"; };
-		BFDFFC1B1867EB84000E6489 /* UIView+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shake.m"; sourceTree = "<group>"; };
-		BFDFFC1D1867EB84000E6489 /* UIViewController+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Rotate.h"; sourceTree = "<group>"; };
-		BFDFFC1E1867EB84000E6489 /* UIViewController+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Rotate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,39 +282,15 @@
 		BFDFFC151867EB84000E6489 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				BFDFFC161867EB84000E6489 /* UIImage */,
-				BFDFFC191867EB84000E6489 /* UIView */,
-				BFDFFC1C1867EB84000E6489 /* UIViewController */,
+				BFAA6EEB188F613A00DD03A3 /* UIView+Shake.h */,
+				BFAA6EE9188F613A00DD03A3 /* UIView+Shake.m */,
+				BFAA6EEE188F613A00DD03A3 /* UIImage+Stretch.h */,
+				BFAA6EEC188F613A00DD03A3 /* UIImage+Stretch.m */,
+				BFAA6EED188F613A00DD03A3 /* UIViewController+Rotate.h */,
+				BFAA6EEA188F613A00DD03A3 /* UIViewController+Rotate.m */,
 			);
 			name = UIKit;
 			path = ../../UIKit;
-			sourceTree = "<group>";
-		};
-		BFDFFC161867EB84000E6489 /* UIImage */ = {
-			isa = PBXGroup;
-			children = (
-				BFDFFC171867EB84000E6489 /* UIImage+Stretch.h */,
-				BFDFFC181867EB84000E6489 /* UIImage+Stretch.m */,
-			);
-			path = UIImage;
-			sourceTree = "<group>";
-		};
-		BFDFFC191867EB84000E6489 /* UIView */ = {
-			isa = PBXGroup;
-			children = (
-				BFDFFC1A1867EB84000E6489 /* UIView+Shake.h */,
-				BFDFFC1B1867EB84000E6489 /* UIView+Shake.m */,
-			);
-			path = UIView;
-			sourceTree = "<group>";
-		};
-		BFDFFC1C1867EB84000E6489 /* UIViewController */ = {
-			isa = PBXGroup;
-			children = (
-				BFDFFC1D1867EB84000E6489 /* UIViewController+Rotate.h */,
-				BFDFFC1E1867EB84000E6489 /* UIViewController+Rotate.m */,
-			);
-			path = UIViewController;
 			sourceTree = "<group>";
 		};
 		BFDFFC221867EB84000E6489 /* YFUIKit */ = {
@@ -434,11 +410,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFDFFC321867EB84000E6489 /* UIViewController+Rotate.m in Sources */,
 				BF0B370C18858329003936B5 /* YFSystemInfo.m in Sources */,
 				BFDFFBDC1867EAC9000E6489 /* AppDelegate.m in Sources */,
-				BFDFFC311867EB84000E6489 /* UIView+Shake.m in Sources */,
+				BFAA6EF0188F613A00DD03A3 /* UIViewController+Rotate.m in Sources */,
 				BFDFFC2C1867EB84000E6489 /* NSString+Regular.m in Sources */,
+				BFAA6EEF188F613A00DD03A3 /* UIView+Shake.m in Sources */,
 				BF48ABDF188E48F300A54B8B /* HHPollView.m in Sources */,
 				BFDFFC291867EB84000E6489 /* NSString+AES.m in Sources */,
 				BFDFFC2B1867EB84000E6489 /* NSString+MD5.m in Sources */,
@@ -447,8 +423,8 @@
 				BF71FD64188AB2E2007ED956 /* YFView.m in Sources */,
 				BF1B7C711880D9190049AF77 /* YFSandbox.m in Sources */,
 				BFDFFC2D1867EB84000E6489 /* NSString+SHA1.m in Sources */,
+				BFAA6EF1188F613A00DD03A3 /* UIImage+Stretch.m in Sources */,
 				BFDFFC271867EB84000E6489 /* NSData+Convert.m in Sources */,
-				BFDFFC301867EB84000E6489 /* UIImage+Stretch.m in Sources */,
 				BFA2A901187DAABF0085F8E8 /* YFModel.m in Sources */,
 				BF48ABDE188E48F300A54B8B /* HHAirPlayControl.m in Sources */,
 				BFDFFC281867EB84000E6489 /* NSFileHandle+MD5.m in Sources */,
