@@ -11,6 +11,7 @@
 		BF1B7C711880D9190049AF77 /* YFSandbox.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1B7C6F1880D9190049AF77 /* YFSandbox.m */; };
 		BF48ABDE188E48F300A54B8B /* HHAirPlayControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BF48ABDA188E48F300A54B8B /* HHAirPlayControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BF48ABDF188E48F300A54B8B /* HHPollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF48ABDB188E48F300A54B8B /* HHPollView.m */; };
+		BF539DA1189106FB00A8F803 /* UILabel+AutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = BF539DA0189106FB00A8F803 /* UILabel+AutoSize.m */; };
 		BF71FD64188AB2E2007ED956 /* YFView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF71FD62188AB2E2007ED956 /* YFView.m */; };
 		BFA2A900187DAABF0085F8E8 /* YFLogger.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFA2A8FD187DAABF0085F8E8 /* YFLogger.mm */; };
 		BFA2A901187DAABF0085F8E8 /* YFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA2A8FF187DAABF0085F8E8 /* YFModel.m */; };
@@ -59,6 +60,8 @@
 		BF48ABDB188E48F300A54B8B /* HHPollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHPollView.m; sourceTree = "<group>"; };
 		BF48ABDC188E48F300A54B8B /* HHPollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHPollView.h; sourceTree = "<group>"; };
 		BF48ABDD188E48F300A54B8B /* HHAirPlayControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHAirPlayControl.h; sourceTree = "<group>"; };
+		BF539D9F189106FB00A8F803 /* UILabel+AutoSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+AutoSize.h"; sourceTree = "<group>"; };
+		BF539DA0189106FB00A8F803 /* UILabel+AutoSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AutoSize.m"; sourceTree = "<group>"; };
 		BF71FD62188AB2E2007ED956 /* YFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFView.m; sourceTree = "<group>"; };
 		BF71FD63188AB2E2007ED956 /* YFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFView.h; sourceTree = "<group>"; };
 		BFA2A8FC187DAABF0085F8E8 /* YFLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFLogger.h; sourceTree = "<group>"; };
@@ -284,6 +287,8 @@
 			children = (
 				BFAA6EEB188F613A00DD03A3 /* UIView+Shake.h */,
 				BFAA6EE9188F613A00DD03A3 /* UIView+Shake.m */,
+				BF539D9F189106FB00A8F803 /* UILabel+AutoSize.h */,
+				BF539DA0189106FB00A8F803 /* UILabel+AutoSize.m */,
 				BFAA6EEE188F613A00DD03A3 /* UIImage+Stretch.h */,
 				BFAA6EEC188F613A00DD03A3 /* UIImage+Stretch.m */,
 				BFAA6EED188F613A00DD03A3 /* UIViewController+Rotate.h */,
@@ -423,6 +428,7 @@
 				BF71FD64188AB2E2007ED956 /* YFView.m in Sources */,
 				BF1B7C711880D9190049AF77 /* YFSandbox.m in Sources */,
 				BFDFFC2D1867EB84000E6489 /* NSString+SHA1.m in Sources */,
+				BF539DA1189106FB00A8F803 /* UILabel+AutoSize.m in Sources */,
 				BFAA6EF1188F613A00DD03A3 /* UIImage+Stretch.m in Sources */,
 				BFDFFC271867EB84000E6489 /* NSData+Convert.m in Sources */,
 				BFA2A901187DAABF0085F8E8 /* YFModel.m in Sources */,
