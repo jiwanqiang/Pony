@@ -36,13 +36,12 @@
 @interface UIView (Shake)
 
 /**
- * Start shake with animation, if the instance is kind of class UIImageView, it will be auto
- * antialiased the image.
+ * Start shaking with animation, if the instance is kind of class UIImageView, it will be auto antialiased the image.
  */
 - (void)beginShaking;
 
 /**
- * Stop shake.
+ * Stop shaking.
  */
 - (void)endShaking;
 
