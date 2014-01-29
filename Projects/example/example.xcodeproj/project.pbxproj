@@ -17,7 +17,7 @@
 		BFA2A900187DAABF0085F8E8 /* YFLogger.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFA2A8FD187DAABF0085F8E8 /* YFLogger.mm */; };
 		BFA2A901187DAABF0085F8E8 /* YFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA2A8FF187DAABF0085F8E8 /* YFModel.m */; };
 		BFA2A903187DACE10085F8E8 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFA2A902187DACE10085F8E8 /* MediaPlayer.framework */; };
-		BFAA6EEF188F613A00DD03A3 /* UIView+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAA6EE9188F613A00DD03A3 /* UIView+Shake.m */; };
+		BFAA6EEF188F613A00DD03A3 /* UIView+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAA6EE9188F613A00DD03A3 /* UIView+Shake.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BFAA6EF0188F613A00DD03A3 /* UIViewController+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAA6EEA188F613A00DD03A3 /* UIViewController+Rotate.m */; };
 		BFAA6EF1188F613A00DD03A3 /* UIImage+Stretch.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAA6EEC188F613A00DD03A3 /* UIImage+Stretch.m */; };
 		BFDFFBCC1867EAC9000E6489 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFFBCB1867EAC9000E6489 /* Foundation.framework */; };
