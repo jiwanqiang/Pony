@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF0B370C18858329003936B5 /* YFSystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0B370A18858329003936B5 /* YFSystemInfo.m */; };
+		BF0DB35C189E142E00F7B9B2 /* UIView+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0DB35B189E142E00F7B9B2 /* UIView+Base.m */; };
 		BF1B7C711880D9190049AF77 /* YFSandbox.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1B7C6F1880D9190049AF77 /* YFSandbox.m */; };
 		BF44A51618925740008E3B45 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = BF44A51518925740008E3B45 /* UIImage+Resize.m */; };
 		BF48ABDE188E48F300A54B8B /* HHAirPlayControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BF48ABDA188E48F300A54B8B /* HHAirPlayControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -55,6 +56,8 @@
 /* Begin PBXFileReference section */
 		BF0B370A18858329003936B5 /* YFSystemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFSystemInfo.m; sourceTree = "<group>"; };
 		BF0B370B18858329003936B5 /* YFSystemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFSystemInfo.h; sourceTree = "<group>"; };
+		BF0DB35A189E142E00F7B9B2 /* UIView+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Base.h"; sourceTree = "<group>"; };
+		BF0DB35B189E142E00F7B9B2 /* UIView+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Base.m"; sourceTree = "<group>"; };
 		BF1B7C6F1880D9190049AF77 /* YFSandbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFSandbox.m; sourceTree = "<group>"; };
 		BF1B7C701880D9190049AF77 /* YFSandbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFSandbox.h; sourceTree = "<group>"; };
 		BF44A51418925740008E3B45 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
@@ -298,6 +301,8 @@
 				BFAA6EEA188F613A00DD03A3 /* UIViewController+Rotate.m */,
 				BF44A51418925740008E3B45 /* UIImage+Resize.h */,
 				BF44A51518925740008E3B45 /* UIImage+Resize.m */,
+				BF0DB35A189E142E00F7B9B2 /* UIView+Base.h */,
+				BF0DB35B189E142E00F7B9B2 /* UIView+Base.m */,
 			);
 			name = UIKit;
 			path = ../../UIKit;
@@ -441,6 +446,7 @@
 				BFDFFC281867EB84000E6489 /* NSFileHandle+MD5.m in Sources */,
 				BF44A51618925740008E3B45 /* UIImage+Resize.m in Sources */,
 				BFA2A900187DAABF0085F8E8 /* YFLogger.mm in Sources */,
+				BF0DB35C189E142E00F7B9B2 /* UIView+Base.m in Sources */,
 				BFDFFC261867EB84000E6489 /* NSData+Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
