@@ -25,8 +25,17 @@
 #import <UIKit/UIKit.h>
 
 /**
- *  To-Do
+ *  Resize the image. (To-Do)
  */
 @interface UIImage (Resize)
+
+/**
+ *  Resize the image with scale (To-Do)
+ *
+ *  @param scale the zoom scale of the image (0.0 - 2.0)
+ *
+ *  @return a new UIImage instance
+ */
+- (UIImage *)resizeWithScale:(float)scale;
 
 @end

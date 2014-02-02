@@ -26,4 +26,9 @@
 
 @implementation UIImage (Resize)
 
+- (UIImage *)resizeWithScale:(float)scale
+{
+    return nil;
+}
+
 @end
