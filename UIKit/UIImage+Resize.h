@@ -45,6 +45,6 @@
  *
  *  @return new image instance
  */
-- (UIImage *)cropImageWithBounds:(CGRect)bounds;
+- (UIImage *)cropWithBounds:(CGRect)bounds;
 
 @end
