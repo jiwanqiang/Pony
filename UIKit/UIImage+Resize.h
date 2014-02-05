@@ -38,4 +38,13 @@
  */
 - (UIImage *)resizeWithScale:(float)scale;
 
+/**
+ *  Crope the image with the bounds.
+ *
+ *  @param bounds bounds of the image
+ *
+ *  @return new image instance
+ */
+- (UIImage *)cropImageWithBounds:(CGRect)bounds;
+
 @end

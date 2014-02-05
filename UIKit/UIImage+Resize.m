@@ -31,4 +31,12 @@
     return nil;
 }
 
+- (UIImage *)cropImageWithBounds:(CGRect)bounds
+{
+    CGImageRef newImgRef = CGImageCreateWithImageInRect(self.CGImage, bounds);
+    UIImage *newImg = [UIImage imageWithCGImage:newImgRef];
+    CGImageRelease(newImgRef);
+    return newImg;
+}
+
 @end
