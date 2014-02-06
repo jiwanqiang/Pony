@@ -30,21 +30,31 @@
 @interface UIImage (Resize)
 
 /**
- *  Resize the image with scale (To-Do)
+ *  Resize the image with scale
  *
  *  @param scale the zoom scale of the image (0.0 - 2.0)
  *
- *  @return a new UIImage instance
+ *  @return new UIImage instance
  */
 - (UIImage *)resizeWithScale:(float)scale;
 
 /**
- *  Crope the image with the bounds.
+ *  Crop the image with the bounds.
  *
  *  @param bounds bounds of the image
  *
- *  @return new image instance
+ *  @return new UIImage instance
  */
 - (UIImage *)cropWithBounds:(CGRect)bounds;
+
+/**
+ *  Resize the image with new size. (To-Do)
+ *
+ *  @param newSize size of the new image
+ *  @param quality interpolation quality
+ *
+ *  @return new UIImage instance
+ */
+- (UIImage *)resizeWithSize:(CGSize)newSize interpolationQuality:(CGInterpolationQuality)quality;
 
 @end

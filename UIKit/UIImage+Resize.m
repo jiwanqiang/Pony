@@ -28,7 +28,7 @@
 
 - (UIImage *)resizeWithScale:(float)scale
 {
-    return nil;
+    return [UIImage imageWithCGImage:self.CGImage scale:scale orientation:self.imageOrientation];
 }
 
 - (UIImage *)cropWithBounds:(CGRect)bounds
@@ -37,6 +37,46 @@
     UIImage *newImg = [UIImage imageWithCGImage:newImgRef];
     CGImageRelease(newImgRef);
     return newImg;
+}
+
+- (UIImage *)resizeWithSize:(CGSize)newSize interpolationQuality:(CGInterpolationQuality)quality
+{
+    return nil;
+}
+
+- (UIImage *)resizeWithSize:(CGSize)newSize transform:(CGAffineTransform)transform drawTransposed:(BOOL)transpose interpolationQuality:(CGInterpolationQuality)quality
+{
+    CGRect newRect = CGRectIntegral(CGRectMake(0, 0, newSize.width, newSize.height));
+    CGRect transposedRect = CGRectMake(0, 0, newRect.size.height, newRect.size.width);
+    CGImageRef imgRef = self.CGImage;
+    
+    // Build a context that's the same dimensions as the new size
+    CGContextRef bitmap = CGBitmapContextCreate(NULL,
+                                                newRect.size.width,
+                                                newRect.size.height,
+                                                CGImageGetBitsPerComponent(imgRef),
+                                                0,
+                                                CGImageGetColorSpace(imgRef),
+                                                CGImageGetBitmapInfo(imgRef));
+    
+    // Rotate and/or flip the image if required by its orientation
+    CGContextConcatCTM(bitmap, transform);
+    
+    // Set the quality level to use when rescaling
+    CGContextSetInterpolationQuality(bitmap, quality);
+    
+    // Draw into the context; this scales the image
+    CGContextDrawImage(bitmap, transpose ? transposedRect : newRect, imgRef);
+    
+    // Get the resized image from the context and a UIImage
+    CGImageRef newImgRef = CGBitmapContextCreateImage(bitmap);
+    UIImage *newImage = [UIImage imageWithCGImage:newImgRef scale:1.0 orientation:self.imageOrientation];
+    
+    // Clean up
+    CGContextRelease(bitmap);
+    CGImageRelease(newImgRef);
+    
+    return newImage;
 }
 
 @end
