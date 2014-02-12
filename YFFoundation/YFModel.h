@@ -82,7 +82,7 @@
 - (void)parseWithJSON:(id)JSON keys:(NSDictionary *)keys;
 
 /**
- *  auto generate the JSON string(TO-DO)
+ *  auto generate the JSON string
  *
  *  @return string object which called JSON
  */

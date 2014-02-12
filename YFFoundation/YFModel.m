@@ -145,7 +145,14 @@
 
 - (NSString *)JSONString
 {
-	//TO-DO
+    NSDictionary *dict = [self dictionaryReflectFromAttributes];
+    NSError *error;
+	NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
+    if (jsonData.length > 0 && !error)
+    {
+        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        return jsonString;
+    }
 	return nil;
 }
 
