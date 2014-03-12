@@ -27,7 +27,7 @@
 /**
  *  abstract class for Model
  */
-@interface YFModel : NSObject
+@interface YFModel : NSObject <NSCoding, NSCopying>
 
 /**
  *  parse the dictionary to YFModel's subclass object

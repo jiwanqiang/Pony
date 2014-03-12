@@ -87,11 +87,12 @@
 	}
 }
 
-#pragma mark - Super Methods
 + (NSDictionary *)generateKeys
 {
 	return nil;
 }
+
+#pragma mark - Super Methods
 
 - (NSString *)description
 {
@@ -111,7 +112,62 @@
 	}
 }
 
+#pragma mark - NSCoding Methods
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self)
+    {
+        unsigned int count = 0;
+		objc_property_t *attributes = class_copyPropertyList([self class], &count);
+		objc_property_t property;
+		NSString *key;
+		
+		for (int i = 0; i < count; i++)
+		{
+			property = attributes[i];
+			key = [NSString stringWithUTF8String:property_getName(property)];
+            [self setValue:[aDecoder decodeObjectForKey:key] forKey:key];
+		}
+		
+		free(attributes);
+		attributes = nil;
+    }
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    unsigned int count = 0;
+    objc_property_t *attributes = class_copyPropertyList([self class], &count);
+    objc_property_t property;
+    NSString *key;
+    id value;
+    
+    for (int i = 0; i < count; i++)
+    {
+        property = attributes[i];
+        key = [NSString stringWithUTF8String:property_getName(property)];
+        value = [self valueForKey:key];
+        [aCoder encodeObject:value forKey:key];
+    }
+    
+    free(attributes);
+    attributes = nil;
+}
+
+#pragma mark - NSCopying Methods
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    // To-Do
+    return nil;
+}
+
 #pragma mark - Public Methods
+
 - (NSDictionary *)dictionaryReflectFromAttributes
 {
 	@autoreleasepool
@@ -121,7 +177,8 @@
 		unsigned int count = 0;
 		objc_property_t *attributes = class_copyPropertyList([self class], &count);
 		objc_property_t property;
-		NSString *key, *value;
+		NSString *key;
+        id value;
 		
 		for (int i = 0; i < count; i++)
 		{
