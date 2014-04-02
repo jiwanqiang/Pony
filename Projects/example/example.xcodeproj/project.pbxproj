@@ -15,12 +15,15 @@
 		BF48ABDF188E48F300A54B8B /* HHPollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF48ABDB188E48F300A54B8B /* HHPollView.m */; };
 		BF539DA1189106FB00A8F803 /* UILabel+AutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = BF539DA0189106FB00A8F803 /* UILabel+AutoSize.m */; };
 		BF71FD64188AB2E2007ED956 /* YFView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF71FD62188AB2E2007ED956 /* YFView.m */; };
+		BF93CF9518B3021B00A6A9EF /* Element.m in Sources */ = {isa = PBXBuildFile; fileRef = BF93CF9418B3021B00A6A9EF /* Element.m */; };
 		BFA2A900187DAABF0085F8E8 /* YFLogger.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFA2A8FD187DAABF0085F8E8 /* YFLogger.mm */; };
 		BFA2A901187DAABF0085F8E8 /* YFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA2A8FF187DAABF0085F8E8 /* YFModel.m */; };
 		BFA2A903187DACE10085F8E8 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFA2A902187DACE10085F8E8 /* MediaPlayer.framework */; };
 		BFAA6EEF188F613A00DD03A3 /* UIView+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAA6EE9188F613A00DD03A3 /* UIView+Shake.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BFAA6EF0188F613A00DD03A3 /* UIViewController+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAA6EEA188F613A00DD03A3 /* UIViewController+Rotate.m */; };
 		BFAA6EF1188F613A00DD03A3 /* UIImage+Stretch.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAA6EEC188F613A00DD03A3 /* UIImage+Stretch.m */; };
+		BFC2848318EC6001002784D9 /* libHHPlayerKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC2848218EC6001002784D9 /* libHHPlayerKit.a */; };
+		BFC798DB18B387E100139C40 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC798DA18B387E100139C40 /* CustomCell.m */; };
 		BFDFFBCC1867EAC9000E6489 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFFBCB1867EAC9000E6489 /* Foundation.framework */; };
 		BFDFFBCE1867EAC9000E6489 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFFBCD1867EAC9000E6489 /* CoreGraphics.framework */; };
 		BFDFFBD01867EAC9000E6489 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFFBCF1867EAC9000E6489 /* UIKit.framework */; };
@@ -70,6 +73,8 @@
 		BF539DA0189106FB00A8F803 /* UILabel+AutoSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AutoSize.m"; sourceTree = "<group>"; };
 		BF71FD62188AB2E2007ED956 /* YFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFView.m; sourceTree = "<group>"; };
 		BF71FD63188AB2E2007ED956 /* YFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFView.h; sourceTree = "<group>"; };
+		BF93CF9318B3021B00A6A9EF /* Element.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Element.h; sourceTree = "<group>"; };
+		BF93CF9418B3021B00A6A9EF /* Element.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Element.m; sourceTree = "<group>"; };
 		BFA2A8FC187DAABF0085F8E8 /* YFLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFLogger.h; sourceTree = "<group>"; };
 		BFA2A8FD187DAABF0085F8E8 /* YFLogger.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = YFLogger.mm; sourceTree = "<group>"; };
 		BFA2A8FE187DAABF0085F8E8 /* YFModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFModel.h; sourceTree = "<group>"; };
@@ -81,6 +86,18 @@
 		BFAA6EEC188F613A00DD03A3 /* UIImage+Stretch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Stretch.m"; sourceTree = "<group>"; };
 		BFAA6EED188F613A00DD03A3 /* UIViewController+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Rotate.h"; sourceTree = "<group>"; };
 		BFAA6EEE188F613A00DD03A3 /* UIImage+Stretch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Stretch.h"; sourceTree = "<group>"; };
+		BFC2847918EC6001002784D9 /* HHAirplayActiveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHAirplayActiveView.h; sourceTree = "<group>"; };
+		BFC2847A18EC6001002784D9 /* HHPlayerBGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHPlayerBGView.h; sourceTree = "<group>"; };
+		BFC2847B18EC6001002784D9 /* HHPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHPlayerController.h; sourceTree = "<group>"; };
+		BFC2847C18EC6001002784D9 /* HHPlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHPlayerControlView.h; sourceTree = "<group>"; };
+		BFC2847D18EC6001002784D9 /* HHPlayerKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHPlayerKeys.h; sourceTree = "<group>"; };
+		BFC2847E18EC6001002784D9 /* HHPlayerKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHPlayerKit.h; sourceTree = "<group>"; };
+		BFC2847F18EC6001002784D9 /* HHPlayerNavView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHPlayerNavView.h; sourceTree = "<group>"; };
+		BFC2848018EC6001002784D9 /* HHPlayerNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHPlayerNotification.h; sourceTree = "<group>"; };
+		BFC2848118EC6001002784D9 /* HHPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHPlayerView.h; sourceTree = "<group>"; };
+		BFC2848218EC6001002784D9 /* libHHPlayerKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libHHPlayerKit.a; sourceTree = "<group>"; };
+		BFC798D918B387E100139C40 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		BFC798DA18B387E100139C40 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		BFDFFBC81867EAC9000E6489 /* example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDFFBCB1867EAC9000E6489 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BFDFFBCD1867EAC9000E6489 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -120,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC2848318EC6001002784D9 /* libHHPlayerKit.a in Frameworks */,
 				BFA2A903187DACE10085F8E8 /* MediaPlayer.framework in Frameworks */,
 				BFDFFBCE1867EAC9000E6489 /* CoreGraphics.framework in Frameworks */,
 				BFDFFBD01867EAC9000E6489 /* UIKit.framework in Frameworks */,
@@ -154,6 +172,24 @@
 			);
 			name = YFFoundation;
 			path = ../../YFFoundation;
+			sourceTree = "<group>";
+		};
+		BFC2847818EC6001002784D9 /* HHPlayerKit */ = {
+			isa = PBXGroup;
+			children = (
+				BFC2847918EC6001002784D9 /* HHAirplayActiveView.h */,
+				BFC2847A18EC6001002784D9 /* HHPlayerBGView.h */,
+				BFC2847B18EC6001002784D9 /* HHPlayerController.h */,
+				BFC2847C18EC6001002784D9 /* HHPlayerControlView.h */,
+				BFC2847D18EC6001002784D9 /* HHPlayerKeys.h */,
+				BFC2847E18EC6001002784D9 /* HHPlayerKit.h */,
+				BFC2847F18EC6001002784D9 /* HHPlayerNavView.h */,
+				BFC2848018EC6001002784D9 /* HHPlayerNotification.h */,
+				BFC2848118EC6001002784D9 /* HHPlayerView.h */,
+				BFC2848218EC6001002784D9 /* libHHPlayerKit.a */,
+			);
+			name = HHPlayerKit;
+			path = ../../HHPlayerKit;
 			sourceTree = "<group>";
 		};
 		BFDFFBBF1867EAC9000E6489 = {
@@ -195,6 +231,10 @@
 				BFDFFBDB1867EAC9000E6489 /* AppDelegate.m */,
 				BFDFFBDD1867EAC9000E6489 /* Images.xcassets */,
 				BFDFFBD21867EAC9000E6489 /* Supporting Files */,
+				BF93CF9318B3021B00A6A9EF /* Element.h */,
+				BF93CF9418B3021B00A6A9EF /* Element.m */,
+				BFC798D918B387E100139C40 /* CustomCell.h */,
+				BFC798DA18B387E100139C40 /* CustomCell.m */,
 			);
 			path = example;
 			sourceTree = "<group>";
@@ -321,6 +361,7 @@
 		BFDFFC351867EB8B000E6489 /* Pony */ = {
 			isa = PBXGroup;
 			children = (
+				BFC2847818EC6001002784D9 /* HHPlayerKit */,
 				BFDFFC151867EB84000E6489 /* UIKit */,
 				BFDFFC221867EB84000E6489 /* YFUIKit */,
 				BFDFFC0E1867EB84000E6489 /* HHUIKit */,
@@ -431,6 +472,7 @@
 				BFDFFC2C1867EB84000E6489 /* NSString+Regular.m in Sources */,
 				BFAA6EEF188F613A00DD03A3 /* UIView+Shake.m in Sources */,
 				BF48ABDF188E48F300A54B8B /* HHPollView.m in Sources */,
+				BF93CF9518B3021B00A6A9EF /* Element.m in Sources */,
 				BFDFFC291867EB84000E6489 /* NSString+AES.m in Sources */,
 				BFDFFC2B1867EB84000E6489 /* NSString+MD5.m in Sources */,
 				BFDFFBD81867EAC9000E6489 /* main.m in Sources */,
@@ -438,6 +480,7 @@
 				BF71FD64188AB2E2007ED956 /* YFView.m in Sources */,
 				BF1B7C711880D9190049AF77 /* YFSandbox.m in Sources */,
 				BFDFFC2D1867EB84000E6489 /* NSString+SHA1.m in Sources */,
+				BFC798DB18B387E100139C40 /* CustomCell.m in Sources */,
 				BF539DA1189106FB00A8F803 /* UILabel+AutoSize.m in Sources */,
 				BFAA6EF1188F613A00DD03A3 /* UIImage+Stretch.m in Sources */,
 				BFDFFC271867EB84000E6489 /* NSData+Convert.m in Sources */,
@@ -571,6 +614,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "example/example-Prefix.pch";
 				INFOPLIST_FILE = "example/example-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/Jimmy/Developer/GitHub/Objective-C/Pony/HHPlayerKit",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -584,6 +631,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "example/example-Prefix.pch";
 				INFOPLIST_FILE = "example/example-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/Jimmy/Developer/GitHub/Objective-C/Pony/HHPlayerKit",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
