@@ -25,7 +25,10 @@
 #import "YFSystemInfo.h"
 #include <math.h>
 
-#import "OpenUDID.h"
+#if TARGET_IPHONE_SIMULATOR
+#else
+    #import "OpenUDID.h"
+#endif
 
 @implementation YFSystemInfo
 
@@ -33,10 +36,9 @@
 {
 	static YFSystemInfo *__singletone;
 	static dispatch_once_t onceToken;
-	dispatch_once(&onceToken, ^
-	{
-		__singletone = [[YFSystemInfo alloc] init];
-	});
+	dispatch_once(&onceToken, ^ {
+        __singletone = [[YFSystemInfo alloc] init];
+    });
 	return __singletone;
 }
 

@@ -144,8 +144,8 @@
 
 - (void)getDisplayContentsWithCurpage:(NSUInteger)page
 {
-	int pre = [self validPageValue:_currentIndex - 1];
-	int last = [self validPageValue:_currentIndex + 1];
+	NSUInteger pre = [self validPageValue:_currentIndex - 1];
+	NSUInteger last = [self validPageValue:_currentIndex + 1];
 	
 	if (!self.currentViews)
 	{
@@ -161,7 +161,7 @@
 	[self.currentViews addObject:[_dataSource pageAtIndex:last]];
 }
 
-- (int)validPageValue:(NSInteger)value
+- (NSUInteger)validPageValue:(NSInteger)value
 {
 	if (value == -1)
 	{

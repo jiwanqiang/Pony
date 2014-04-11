@@ -66,7 +66,7 @@ int convertHexChar(char hex_char)
 
 - (NSData *)__hexStringConvertToData
 {
-	int hexLength = self.length;
+	NSUInteger hexLength = self.length;
 	Byte bytes[hexLength/2];
 	
 	for (int i = 0; i < self.length/2; i++)
@@ -97,7 +97,7 @@ int convertHexChar(char hex_char)
 	}
 	
 	//buffer
-	unsigned int dataLength = [data length];
+	NSUInteger dataLength = [data length];
 	size_t bufferSize = dataLength + kCCBlockSizeAES128;
 	void *buffer = malloc(bufferSize);
 	if (!buffer) return nil;

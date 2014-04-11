@@ -34,24 +34,21 @@
 	CC_MD5_Init(&md5_ctx);
 	
 	NSData *fileData;
-	do
-	{
-		@autoreleasepool
-		{
+	do {
+		@autoreleasepool {
 			fileData = [self readDataOfLength:1024];
-			CC_MD5_Update(&md5_ctx, [fileData bytes], [fileData length]);
+			CC_MD5_Update(&md5_ctx, [fileData bytes], (CC_LONG)[fileData length]);
 		}
-	}while([fileData length]);
+	} while ([fileData length]);
 	
 	unsigned char result[CC_MD5_DIGEST_LENGTH];
 	CC_MD5_Final(result, &md5_ctx);
 
 	NSMutableString *hashString = [NSMutableString string];
-	for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)
-	{
+	for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
 		[hashString appendFormat:@"%02x",result[i]];
 	}
-	
+    
 	return [hashString lowercaseString];
 }
 
