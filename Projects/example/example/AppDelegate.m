@@ -8,6 +8,12 @@
 
 #import "AppDelegate.h"
 
+@interface AppDelegate ()
+
+@property (nonatomic, strong) UITabBarController *tabBarController;
+
+@end
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -18,6 +24,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
 
+    self.tabBarController = [UITabBarController new];
+    self.window.rootViewController = self.tabBarController;
+    
     return YES;
 }
 
