@@ -23,7 +23,7 @@
 //
 
 #if __has_feature(objc_arc)
-	#error This file must be compiled with MRC. Use -fno-objc-arc flag (or convert project to MRC).
+    #error This file must be compiled with MRC. Use -fno-objc-arc flag (or convert project to MRC).
 #endif
 
 #import "HHAirPlayControl.h"
@@ -53,7 +53,7 @@
     [_detected release];
     [_playing release];
     
-//    AudioSessionRemovePropertyListenerWithUserData(kAudioSessionProperty_AudioRouteChange, audioRouteChangeCallback, (void*)self);
+    //    AudioSessionRemovePropertyListenerWithUserData(kAudioSessionProperty_AudioRouteChange, audioRouteChangeCallback, (void*)self);
     [super dealloc];
 }
 

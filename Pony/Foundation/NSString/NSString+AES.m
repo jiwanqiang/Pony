@@ -25,6 +25,10 @@
 #import "NSString+AES.h"
 #import <CommonCrypto/CommonCryptor.h>
 
+#if __has_feature(objc_arc)
+    #error This file must be compiled with MRC. Use -fno-objc-arc flag (or convert project to ARC).
+#endif
+
 #if defined(CRYPT_RESULT_ENCODE_WAY) && CRYPT_RESULT_ENCODE_WAY
 int convertHexChar(char hex_char)
 {
@@ -148,7 +152,7 @@ int convertHexChar(char hex_char)
 	}
 	free(buffer);
 	return nil;
-
+    
 }
 
 #pragma mark - Public Methods

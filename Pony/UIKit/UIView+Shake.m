@@ -23,7 +23,7 @@
 //
 
 #if __has_feature(objc_arc)
-	#error This file must be compiled with MRC. Use -fno-objc-arc flag (or convert project to ARC).
+    #error This file must be compiled with MRC. Use -fno-objc-arc flag (or convert project to ARC).
 #endif
 
 #import "UIView+Shake.h"
@@ -32,11 +32,11 @@
 #define degreesToRadians(x) (M_PI*(x)/180.0)
 
 #if defined(SHAKE_UIVIEW_ANIMATION) && SHAKE_UIVIEW_ANIMATION
-	static const void *isLeftKey = &isLeftKey;
-	static const void *isEndKey = &isEndKey;
+static const void *isLeftKey = &isLeftKey;
+static const void *isEndKey = &isEndKey;
 #else
-	static const void *timerKey = &timerKey;
-	static const void *imgKey = &imgKey;
+static const void *timerKey = &timerKey;
+static const void *imgKey = &imgKey;
 #endif
 
 @interface UIView ()
@@ -169,7 +169,7 @@
 	
 	self.timer = [NSTimer scheduledTimerWithTimeInterval:SHAKETIME target:self selector:@selector(shake) userInfo:nil repeats:YES];
 	[self.timer fire];
-
+    
 }
 
 - (void)shake

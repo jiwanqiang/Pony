@@ -25,7 +25,7 @@
 #import "HHPollView.h"
 
 #if ! __has_feature(objc_arc)
-	#error This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
+#error This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
 #endif
 
 @interface HHPollView () <UIScrollViewDelegate>
@@ -155,7 +155,7 @@
 	{
 		[self.currentViews removeAllObjects];
 	}
-
+    
 	[self.currentViews addObject:[_dataSource pageAtIndex:pre]];
 	[self.currentViews addObject:[_dataSource pageAtIndex:page]];
 	[self.currentViews addObject:[_dataSource pageAtIndex:last]];
