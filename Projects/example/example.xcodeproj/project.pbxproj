@@ -42,6 +42,7 @@
 		BFDFFBE71867EAC9000E6489 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFFBCF1867EAC9000E6489 /* UIKit.framework */; };
 		BFDFFBEF1867EAC9000E6489 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFDFFBED1867EAC9000E6489 /* InfoPlist.strings */; };
 		BFDFFBF11867EAC9000E6489 /* exampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFFBF01867EAC9000E6489 /* exampleTests.m */; };
+		BFF4BB5818FE9887004497CD /* EffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF4BB5718FE9887004497CD /* EffectViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,8 @@
 		BFDFFBEC1867EAC9000E6489 /* exampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "exampleTests-Info.plist"; sourceTree = "<group>"; };
 		BFDFFBEE1867EAC9000E6489 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BFDFFBF01867EAC9000E6489 /* exampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = exampleTests.m; sourceTree = "<group>"; };
+		BFF4BB5618FE9887004497CD /* EffectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EffectViewController.h; sourceTree = "<group>"; };
+		BFF4BB5718FE9887004497CD /* EffectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EffectViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,8 @@
 		BF12452E18F83A780044F9EE /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				BFF4BB5618FE9887004497CD /* EffectViewController.h */,
+				BFF4BB5718FE9887004497CD /* EffectViewController.m */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -504,6 +509,7 @@
 				BF49EA4518FD596C00331D8F /* NSString+AES.m in Sources */,
 				BF49EA4D18FD596C00331D8F /* UIImage+Stretch.m in Sources */,
 				BF49EA5318FD596C00331D8F /* YFModel.m in Sources */,
+				BFF4BB5818FE9887004497CD /* EffectViewController.m in Sources */,
 				BF49EA4718FD596C00331D8F /* NSString+MD5.m in Sources */,
 				BFDFFBD81867EAC9000E6489 /* main.m in Sources */,
 				BF49EA4618FD596C00331D8F /* NSString+Digest.m in Sources */,
