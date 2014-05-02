@@ -28,22 +28,12 @@
 
 - (CGSize)sizeToFitConfigure
 {
-    CGSize size;
-    
-    NSComparisonResult result = [[[UIDevice currentDevice] systemVersion] compare:@"7"];
-    if (result == NSOrderedAscending)
-    {
-        size = [self.text sizeWithFont:self.font constrainedToSize:CGSizeMake(self.bounds.size.width, MAXFLOAT) lineBreakMode:self.lineBreakMode];
-    }
-    else
-    {
-        NSStringDrawingOptions options = NSStringDrawingUsesLineFragmentOrigin;
-        NSDictionary *attr = @{NSFontAttributeName: self.font};
-        CGRect rect = [self.text boundingRectWithSize:CGSizeMake(self.bounds.size.width, MAXFLOAT) options:options attributes:attr context:nil];
-        size = rect.size;
-    }
-    
-    return size;
+#if (__IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0)
+    BOOL result = floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1;
+    return result ? [self __calSizeAbove7] : [self __calSizeBelow7];
+#else
+    return [self __calSizeAbove7];
+#endif
 }
 
 - (CGSize)sizeToFitLimitedConfigure
@@ -53,8 +43,34 @@
 
 - (CGSize)sizeToFitMaxBoundsLimitedToNumberOfLines:(NSInteger)numberOfLines
 {
-    CGRect bounds = CGRectMake(0.f, 0.f, self.bounds.size.width, self.bounds.size.height);
+    CGRect bounds = CGRectMake(0.f, 0.f, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds));
     CGRect rect = [self textRectForBounds:bounds limitedToNumberOfLines:numberOfLines];
+    return rect.size;
+}
+
+#pragma mark - Private Methods
+
+#if (__IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0)
+- (CGSize)__calSizeBelow7
+{
+    CGSize cSize = CGSizeMake(CGRectGetWidth(self.bounds), MAXFLOAT);
+    CGSize size = [self.text sizeWithFont:self.font
+                        constrainedToSize:cSize
+                            lineBreakMode:self.lineBreakMode];
+    
+    return size;
+}
+#endif
+
+- (CGSize)__calSizeAbove7
+{
+    NSStringDrawingOptions options = NSStringDrawingUsesLineFragmentOrigin;
+    NSDictionary *attr = @{NSFontAttributeName: self.font};
+    CGSize bSize = CGSizeMake(CGRectGetWidth(self.bounds), MAXFLOAT);
+    CGRect rect = [self.text boundingRectWithSize:bSize
+                                          options:options
+                                       attributes:attr
+                                          context:nil];
     return rect.size;
 }
 

@@ -50,7 +50,7 @@
 #pragma mark - Setter and Getter
 - (CGFloat)x
 {
-	return self.frame.origin.x;
+    return CGRectGetMinX(self.frame);
 }
 
 - (void)setX:(CGFloat)x
@@ -62,7 +62,7 @@
 
 - (CGFloat)y
 {
-	return self.frame.origin.y;
+    return CGRectGetMinY(self.frame);
 }
 
 - (void)setY:(CGFloat)y
@@ -74,7 +74,7 @@
 
 - (CGFloat)w
 {
-	return self.frame.size.width;
+    return CGRectGetWidth(self.frame);
 }
 
 - (void)setW:(CGFloat)w
@@ -86,7 +86,7 @@
 
 - (CGFloat)h
 {
-	return self.frame.size.height;
+    return CGRectGetHeight(self.frame);
 }
 
 - (void)setH:(CGFloat)h

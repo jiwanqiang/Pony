@@ -26,36 +26,36 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
 @implementation UIViewController (Rotate)
 
-- (void)rotateFromPortraitToLandscapeRight:(BOOL)yes
+- (void)rotateFromPortraitToLandscapeRight:(BOOL)toRight
 {
-	UIInterfaceOrientation statusBarOrientation = yes ? UIInterfaceOrientationLandscapeRight
+	UIInterfaceOrientation statusBarOrientation = toRight ? UIInterfaceOrientationLandscapeRight
 	: UIInterfaceOrientationLandscapeLeft;
-	self.view.frame = CGRectMake(0, 0, CGRectGetHeight(UIScreen.mainScreen.bounds), CGRectGetWidth(UIScreen.mainScreen.bounds)-20);
+	self.view.frame = CGRectMake(0,
+                                 0,
+                                 CGRectGetHeight(UIScreen.mainScreen.bounds),
+                                 CGRectGetWidth(UIScreen.mainScreen.bounds) - 20);
 	[[UIApplication sharedApplication] setStatusBarOrientation:statusBarOrientation animated:YES];
 	
 	[UIView animateWithDuration:UIApplication.sharedApplication.statusBarOrientationAnimationDuration
-					 animations:^(void)
-	 {
+					 animations:^(void) {
 		 CGFloat sbHeight = CGRectGetWidth(UIApplication.sharedApplication.statusBarFrame);
 		 CGRect screenBounds = UIScreen.mainScreen.bounds;
 		 CGFloat tx = (CGRectGetHeight(screenBounds) - CGRectGetWidth(screenBounds))/2 + sbHeight/2;
 		 CGFloat ty = (CGRectGetHeight(screenBounds) - CGRectGetWidth(screenBounds))/2 - sbHeight/2;
-		 tx = yes ? tx : tx-sbHeight;
-		 CGAffineTransform transform = CGAffineTransformMakeTranslation(-tx,
-																		ty);
+		 tx = toRight ? tx : tx-sbHeight;
+		 CGAffineTransform transform = CGAffineTransformMakeTranslation(-tx, ty);
 		 
-		 self.view.transform = CGAffineTransformRotate(transform, yes ? M_PI/2 : -M_PI/2);
+		 self.view.transform = CGAffineTransformRotate(transform, toRight ? M_PI/2 : -M_PI/2);
 	 }];
 	
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wundeclared-selector"
-	if ([self respondsToSelector:@selector(hideTabBar:)])
-	{
+	if ([self respondsToSelector:@selector(hideTabBar:)]) {
 		objc_msgSend(self, @selector(hideTabBar:), YES);
 	}
-#pragma clang diagnostic pop
+
 }
 
 - (void)rotateFromLandscapeToPortrait
@@ -63,48 +63,43 @@
 	[[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait animated:YES];
 	
 	[UIView animateWithDuration:UIApplication.sharedApplication.statusBarOrientationAnimationDuration
-					 animations:^(void)
-	 {
+					 animations:^(void) {
 		 self.view.transform = CGAffineTransformIdentity;
 	 }];
 	
-	self.view.frame = CGRectMake(0, 0, CGRectGetWidth(UIScreen.mainScreen.bounds), CGRectGetHeight(UIScreen.mainScreen.bounds) - 20);
-	
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wundeclared-selector"
-	if ([self respondsToSelector:@selector(hideTabBar:)])
-	{
+	self.view.frame = CGRectMake(0,
+                                 0,
+                                 CGRectGetWidth(UIScreen.mainScreen.bounds),
+                                 CGRectGetHeight(UIScreen.mainScreen.bounds) - 20);
+    
+	if ([self respondsToSelector:@selector(hideTabBar:)]) {
 		objc_msgSend(self, @selector(hideTabBar:), NO);
 	}
-#pragma clang diagnostic pop
 }
 
-- (void)rotateFromLandscapeLeftToRight:(BOOL)yes
+- (void)rotateFromLandscapeLeftToRight:(BOOL)toRight
 {
-	UIInterfaceOrientation statusBarOrientation = yes ? UIInterfaceOrientationLandscapeRight : UIInterfaceOrientationLandscapeLeft;
+	UIInterfaceOrientation statusBarOrientation = toRight ? UIInterfaceOrientationLandscapeRight : UIInterfaceOrientationLandscapeLeft;
 	[[UIApplication sharedApplication] setStatusBarOrientation:statusBarOrientation animated:YES];
 	
 	[UIView animateWithDuration:UIApplication.sharedApplication.statusBarOrientationAnimationDuration
-					 animations:^(void)
-	 {
+					 animations:^(void) {
 		 CGFloat sbHeight = 20.0f;
 		 CGRect screenBounds = UIScreen.mainScreen.bounds;
 		 CGFloat tx = (CGRectGetHeight(screenBounds) - CGRectGetWidth(screenBounds))/2 + sbHeight/2;
 		 CGFloat ty = (CGRectGetHeight(screenBounds) - CGRectGetWidth(screenBounds))/2 - sbHeight/2;
-		 tx = yes ? tx : tx - sbHeight;
-		 CGAffineTransform transform = yes ? CGAffineTransformMake(1, 0, 0, 1, -tx, ty)
+		 tx = toRight ? tx : tx - sbHeight;
+		 CGAffineTransform transform = toRight ? CGAffineTransformMake(1, 0, 0, 1, -tx, ty)
 		 : CGAffineTransformMake(1, 0, 0, 1, -tx, ty);
 		 
-		 self.view.transform = CGAffineTransformRotate(transform, yes ? M_PI/2 : -M_PI/2);;
+		 self.view.transform = CGAffineTransformRotate(transform, toRight ? M_PI/2 : -M_PI/2);;
 	 }];
 	
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wundeclared-selector"
-	if ([self respondsToSelector:@selector(hideTabBar:)])
-	{
+	if ([self respondsToSelector:@selector(hideTabBar:)]) {
 		objc_msgSend(self, @selector(hideTabBar:), YES);
 	}
-#pragma clang diagnostic pop
 }
 
 @end
+
+#pragma clang diagnostic pop

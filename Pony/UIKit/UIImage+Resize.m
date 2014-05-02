@@ -44,7 +44,10 @@
     return nil;
 }
 
-- (UIImage *)resizeWithSize:(CGSize)newSize transform:(CGAffineTransform)transform drawTransposed:(BOOL)transpose interpolationQuality:(CGInterpolationQuality)quality
+- (UIImage *)resizeWithSize:(CGSize)newSize
+                  transform:(CGAffineTransform)transform
+             drawTransposed:(BOOL)transpose
+       interpolationQuality:(CGInterpolationQuality)quality
 {
     CGRect newRect = CGRectIntegral(CGRectMake(0, 0, newSize.width, newSize.height));
     CGRect transposedRect = CGRectMake(0, 0, newRect.size.height, newRect.size.width);
@@ -70,7 +73,9 @@
     
     // Get the resized image from the context and a UIImage
     CGImageRef newImgRef = CGBitmapContextCreateImage(bitmap);
-    UIImage *newImage = [UIImage imageWithCGImage:newImgRef scale:1.0 orientation:self.imageOrientation];
+    UIImage *newImage = [UIImage imageWithCGImage:newImgRef
+                                            scale:1.0
+                                      orientation:self.imageOrientation];
     
     // Clean up
     CGContextRelease(bitmap);

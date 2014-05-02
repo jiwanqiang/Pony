@@ -31,8 +31,8 @@
 
 - (void)rotateFromLandscapeToPortrait;
 
-- (void)rotateFromLandscapeLeftToRight:(BOOL)yes;
+- (void)rotateFromLandscapeLeftToRight:(BOOL)toRight;
 
-- (void)rotateFromPortraitToLandscapeRight:(BOOL)yes;
+- (void)rotateFromPortraitToLandscapeRight:(BOOL)toRight;
 
 @end

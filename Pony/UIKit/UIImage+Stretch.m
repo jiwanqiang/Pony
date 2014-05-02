@@ -28,14 +28,15 @@
 
 - (UIImage *)stretchableImageWithWithCapInsets:(UIEdgeInsets)capInsets
 {
-	if ([[[UIDevice currentDevice] systemVersion] hasPrefix:@"4"])
-	{
+#if (__IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_5_0)
+    return [self resizableImageWithCapInsets:capInsets];
+#else
+	if (floor(NSFoundationVersionNumber) < NSFoundationVersionNumber_iOS_5_0) {
 		return [self stretchableImageWithLeftCapWidth:capInsets.left topCapHeight:capInsets.top];
+	} else {
+        return [self resizableImageWithCapInsets:capInsets];
 	}
-	else
-	{
-		return [self resizableImageWithCapInsets:capInsets];
-	}
+#endif
 }
 
 @end
