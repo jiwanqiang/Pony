@@ -166,8 +166,9 @@
             finalText = [text substringToIndex:textLength - 1];
         }
         
-        if (self.textView) {
-            self.textView.text = finalText;
+        self.textView.text = finalText;
+        if ([self.textView.delegate respondsToSelector:@selector(textViewDidChange:)]) {
+            [self.textView.delegate textViewDidChange:self.textView];
         }
     }
 }
@@ -180,6 +181,9 @@
         NSString *expressionText = [NSString stringWithFormat:@"%@%03d", HH_EXP_HEAD, i];
         [text appendString:expressionText];
         self.textView.text = text;
+        if ([self.textView.delegate respondsToSelector:@selector(textViewDidChange:)]) {
+            [self.textView.delegate textViewDidChange:self.textView];
+        }
     }
 }
 
