@@ -178,11 +178,7 @@
     if (self.textView) {
         NSInteger i = ((UIButton *)sender).tag;
         NSMutableString *text = [[NSMutableString alloc] initWithString:self.textView.text];
-#if __LP64__ || (TARGET_OS_EMBEDDED && !TARGET_OS_IPHONE) || TARGET_OS_WIN32 || NS_BUILD_32_LIKE_64
-        NSString *expressionText = [NSString stringWithFormat:@"%@%03ld", HH_EXP_HEAD, i];
-#else
-        NSString *expressionText = [NSString stringWithFormat:@"%@%03d", HH_EXP_HEAD, i];
-#endif
+        NSString *expressionText = [NSString stringWithFormat:@"%@%03zd", HH_EXP_HEAD, i];
         [text appendString:expressionText];
         self.textView.text = text;
         if ([self.textView.delegate respondsToSelector:@selector(textViewDidChange:)]) {

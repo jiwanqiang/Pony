@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF3E4524191B50610018C35A /* HHEmotionKeyboard.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF3E4521191B50610018C35A /* HHEmotionKeyboard.bundle */; };
+		BF3E4525191B50610018C35A /* HHEmotionKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3E4523191B50610018C35A /* HHEmotionKeyboard.m */; };
 		BF49EA4218FD596C00331D8F /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49EA1318FD596C00331D8F /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BF49EA4318FD596C00331D8F /* NSData+Convert.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49EA1518FD596C00331D8F /* NSData+Convert.m */; };
 		BF49EA4418FD596C00331D8F /* NSFileHandle+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49EA1818FD596C00331D8F /* NSFileHandle+MD5.m */; };
@@ -58,6 +60,9 @@
 /* Begin PBXFileReference section */
 		BF12452C18F83A110044F9EE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		BF12452D18F83A110044F9EE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		BF3E4521191B50610018C35A /* HHEmotionKeyboard.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HHEmotionKeyboard.bundle; sourceTree = "<group>"; };
+		BF3E4522191B50610018C35A /* HHEmotionKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHEmotionKeyboard.h; sourceTree = "<group>"; };
+		BF3E4523191B50610018C35A /* HHEmotionKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHEmotionKeyboard.m; sourceTree = "<group>"; };
 		BF49EA1218FD596C00331D8F /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		BF49EA1318FD596C00331D8F /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		BF49EA1418FD596C00331D8F /* NSData+Convert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Convert.h"; sourceTree = "<group>"; };
@@ -194,6 +199,16 @@
 			path = Vendor;
 			sourceTree = "<group>";
 		};
+		BF3E4520191B50610018C35A /* HHKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				BF3E4522191B50610018C35A /* HHEmotionKeyboard.h */,
+				BF3E4523191B50610018C35A /* HHEmotionKeyboard.m */,
+				BF3E4521191B50610018C35A /* HHEmotionKeyboard.bundle */,
+			);
+			path = HHKeyboard;
+			sourceTree = "<group>";
+		};
 		BF49EA1018FD596C00331D8F /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,10 +260,11 @@
 		BF49EA2418FD596C00331D8F /* HHUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				BF49EA2518FD596C00331D8F /* HHAirPlayControl.h */,
-				BF49EA2618FD596C00331D8F /* HHAirPlayControl.m */,
 				BF49EA2718FD596C00331D8F /* HHPollView.h */,
 				BF49EA2818FD596C00331D8F /* HHPollView.m */,
+				BF49EA2518FD596C00331D8F /* HHAirPlayControl.h */,
+				BF49EA2618FD596C00331D8F /* HHAirPlayControl.m */,
+				BF3E4520191B50610018C35A /* HHKeyboard */,
 			);
 			name = HHUIKit;
 			path = ../../Pony/HHUIKit;
@@ -484,6 +500,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF3E4524191B50610018C35A /* HHEmotionKeyboard.bundle in Resources */,
 				BFDFFBD61867EAC9000E6489 /* InfoPlist.strings in Resources */,
 				BFDFFBDE1867EAC9000E6489 /* Images.xcassets in Resources */,
 			);
@@ -509,6 +526,7 @@
 				BF49EA4518FD596C00331D8F /* NSString+AES.m in Sources */,
 				BF49EA4D18FD596C00331D8F /* UIImage+Stretch.m in Sources */,
 				BF49EA5318FD596C00331D8F /* YFModel.m in Sources */,
+				BF3E4525191B50610018C35A /* HHEmotionKeyboard.m in Sources */,
 				BFF4BB5818FE9887004497CD /* EffectViewController.m in Sources */,
 				BF49EA4718FD596C00331D8F /* NSString+MD5.m in Sources */,
 				BFDFFBD81867EAC9000E6489 /* main.m in Sources */,
