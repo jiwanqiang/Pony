@@ -25,7 +25,7 @@
 #import "HHPollView.h"
 
 #if ! __has_feature(objc_arc)
-#error This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
+    #error This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
 #endif
 
 @interface HHPollView () <UIScrollViewDelegate>
@@ -55,8 +55,7 @@
 {
 	self = [super initWithFrame:frame];
 	
-	if (self)
-	{
+	if (self) {
 		[self initialize];
 	}
 	
@@ -91,14 +90,10 @@
 
 - (void)resetTimerState
 {
-    if (self.timer)
-    {
-        if ([_timer isValid])
-        {
+    if (self.timer) {
+        if ([_timer isValid]) {
             [_timer invalidate];
-        }
-        else
-        {
+        } else {
             [self beginAutoRun];
         }
     }
@@ -106,16 +101,14 @@
 
 - (void)removeSubviewsOfSuper:(UIView*)view
 {
-	if (view.subviews.count != 0)
-	{
+	if (view.subviews.count != 0) {
 		[view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
 	}
 }
 
 - (void)loadData
 {
-	if ([_delegate respondsToSelector:@selector(pollView:didChangeItemAtIndex:)])
-	{
+	if ([_delegate respondsToSelector:@selector(pollView:didChangeItemAtIndex:)]) {
 		[_delegate pollView:self didChangeItemAtIndex:_currentIndex];
 	}
 	
@@ -123,16 +116,16 @@
 	
 	[self getDisplayContentsWithCurpage:_currentIndex];
 	
-	@autoreleasepool
-	{
+	@autoreleasepool {
 		int visiableCount = (self.numberOfPages >= 2) ? 3 : 1;
-		for (int i = 0; i < visiableCount; i++)
-		{
+        UITapGestureRecognizer *singleTap;
+		for (int i = 0; i < visiableCount; i++) {
 			UIView *v = self.currentViews[i];
 			v.userInteractionEnabled = YES;
 			v.frame = CGRectOffset(v.frame, v.frame.size.width * i, 0);
 			
-			UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+            SEL act = @selector(handleTap:);
+            singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:act];
 			[v addGestureRecognizer:singleTap];
 			
 			[_scrollView addSubview:v];
@@ -147,12 +140,9 @@
 	NSUInteger pre = [self validPageValue:_currentIndex - 1];
 	NSUInteger last = [self validPageValue:_currentIndex + 1];
 	
-	if (!self.currentViews)
-	{
+	if (!self.currentViews) {
 		self.currentViews = [NSMutableArray array];
-	}
-	else
-	{
+	} else {
 		[self.currentViews removeAllObjects];
 	}
     
@@ -163,12 +153,9 @@
 
 - (NSUInteger)validPageValue:(NSInteger)value
 {
-	if (value == -1)
-	{
+	if (value == -1) {
 		value = self.numberOfPages - 1;
-	}
-	else if (value == self.numberOfPages)
-	{
+	} else if (value == self.numberOfPages) {
 		value = 0;
 	}
 	
@@ -177,10 +164,8 @@
 
 - (void)handleTap:(UITapGestureRecognizer *)tap
 {
-	if ( (tap.state == UIGestureRecognizerStateEnded) && !_isAnimations )
-	{
-		if ([_delegate respondsToSelector:@selector(pollView:didSelectItemAtIndex:)])
-		{
+	if ( (tap.state == UIGestureRecognizerStateEnded) && !_isAnimations ) {
+		if ([_delegate respondsToSelector:@selector(pollView:didSelectItemAtIndex:)]) {
 			[_delegate pollView:self didSelectItemAtIndex:_currentIndex];
 		}
 	}
@@ -202,15 +187,10 @@
 	_isAnimations = YES;
 	
 	int x = scrollView.contentOffset.x;
-	if ( x >= (2 * self.frame.size.width) )
-	{
-		//next page
+	if ( x >= (2 * self.frame.size.width) ) {
 		_currentIndex = [self validPageValue:_currentIndex+1];
 		[self loadData];
-	}
-	else if (x <= 0)
-	{
-		//pre page
+	} else if (x <= 0) {
 		_currentIndex = [self validPageValue:_currentIndex-1];
 		[self loadData];
 	}
@@ -228,8 +208,7 @@
 {
 	self.numberOfPages = [_dataSource numberOfPages];
 	
-	if (self.numberOfPages != 0)
-	{
+	if (self.numberOfPages != 0) {
 		_currentIndex = 0;
 		[self loadData];
 	}
@@ -239,9 +218,12 @@
 {
 	[self endAutoRun];
 	
-	self.timer = [NSTimer timerWithTimeInterval:_timerInterval target:self selector:@selector(autoScroll) userInfo:nil repeats:YES];
-	if (self.timer)
-	{
+	self.timer = [NSTimer timerWithTimeInterval:_timerInterval
+                                         target:self
+                                       selector:@selector(autoScroll)
+                                       userInfo:nil
+                                        repeats:YES];
+	if (self.timer) {
 		[[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
 		return YES;
 	}
@@ -251,8 +233,7 @@
 
 - (BOOL)endAutoRun
 {
-	if ([self.timer isValid])
-	{
+	if ([self.timer isValid]) {
 		[self.timer invalidate];
 	}
 	self.timer = nil;
