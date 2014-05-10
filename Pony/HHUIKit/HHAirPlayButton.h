@@ -26,7 +26,9 @@
 
 @class MPVolumeView;
 
-
+/**
+ *  Airplay button
+ */
 @interface HHAirPlayButton : UIView
 {
   @private
@@ -36,6 +38,19 @@
 
 @property (nonatomic, readonly) BOOL isAirplayActive;
 
-- (HHAirPlayButton *)initWithFrame:(CGRect)frame availableImage:(UIImage *)aImage disabledImage:(UIImage *)dImage inuseImage:(UIImage *)iImage;
+/**
+ *  init method
+ *
+ *  @param frame  the button's frame
+ *  @param aImage when the airplay is available, the button display it
+ *  @param dImage when the airplay is disabled, the button display it
+ *  @param iImage when the airplay is in used, the button display it
+ *
+ *  @return <#return value description#>
+ */
+- (HHAirPlayButton *)initWithFrame:(CGRect)frame
+                    availableImage:(UIImage *)aImage
+                     disabledImage:(UIImage *)dImage
+                        inuseImage:(UIImage *)iImage;
 
 @end

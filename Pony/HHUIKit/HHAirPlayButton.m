@@ -27,6 +27,10 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <AudioToolbox/AudioToolbox.h>
 
+#if __has_feature(objc_arc)
+    #error This file must be compiled with MRR. Use -fno-objc-arc flag.
+#endif
+
 static const void *isAirplayActive = &isAirplayActive;
 
 @interface HHAirPlayButton ()
@@ -55,7 +59,10 @@ static const void *isAirplayActive = &isAirplayActive;
     [super dealloc];
 }
 
-- (HHAirPlayButton *)initWithFrame:(CGRect)frame availableImage:(UIImage *)aImage disabledImage:(UIImage *)dImage inuseImage:(UIImage *)iImage
+- (HHAirPlayButton *)initWithFrame:(CGRect)frame
+                    availableImage:(UIImage *)aImage
+                     disabledImage:(UIImage *)dImage
+                        inuseImage:(UIImage *)iImage
 {
     self = [self initWithFrame:frame];
     if (self) {
@@ -83,9 +90,14 @@ static const void *isAirplayActive = &isAirplayActive;
     return self;
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
 {
-    if ( (object == self.mpButton) && ([[change valueForKey:NSKeyValueChangeNewKey] intValue] == 1) && self) {
+    if ((object == self.mpButton)
+        && ([[change valueForKey:NSKeyValueChangeNewKey] intValue] == 1)
+        && self) {
         [_airPlayButton setHidden:YES];
         [self __setMPButtonImage:[self __isAirPlayActive]];
         [self setIsAirplayActive:[self __isAirPlayActive]];
@@ -120,7 +132,10 @@ static const void *isAirplayActive = &isAirplayActive;
 
 - (void)__buildCustomVolumeView
 {
-    CGRect frame = CGRectMake(_volumeFrame.origin.x - 7.f, _volumeFrame.origin.y - 2.f, _volumeFrame.size.width, _volumeFrame.size.height);
+    CGRect frame = CGRectMake(_volumeFrame.origin.x - 7.f,
+                              _volumeFrame.origin.y - 2.f,
+                              _volumeFrame.size.width,
+                              _volumeFrame.size.height);
     _volumeView = [[MPVolumeView alloc] initWithFrame:frame];
     [_volumeView setShowsVolumeSlider:NO];
     
@@ -158,9 +173,10 @@ static const void *isAirplayActive = &isAirplayActive;
         CFArrayRef outputs = CFDictionaryGetValue(currentRouteDescriptionDictionary, kAudioSession_AudioRouteKey_Outputs);
         if(CFArrayGetCount(outputs) > 0) {
             CFDictionaryRef currentOutput = CFArrayGetValueAtIndex(outputs, 0);
-            CFStringRef outputType = CFDictionaryGetValue(currentOutput, kAudioSession_AudioRouteKey_Type);
-            
-            return (CFStringCompare(outputType, kAudioSessionOutputRoute_AirPlay, 0) == kCFCompareEqualTo);
+            CFStringRef outputType = CFDictionaryGetValue(currentOutput,
+                                                          kAudioSession_AudioRouteKey_Type);
+            BOOL ret = CFStringCompare(outputType, kAudioSessionOutputRoute_AirPlay, 0);
+            return (ret == kCFCompareEqualTo);
         }
     }
     
