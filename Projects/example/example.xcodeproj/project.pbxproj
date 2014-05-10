@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF2EAD35191CE13E00821E4A /* HHAirPlayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EAD33191CE13E00821E4A /* HHAirPlayButton.m */; };
+		BF2EAD35191CE13E00821E4A /* HHAirPlayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EAD33191CE13E00821E4A /* HHAirPlayButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BF3E4524191B50610018C35A /* HHEmotionKeyboard.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF3E4521191B50610018C35A /* HHEmotionKeyboard.bundle */; };
 		BF3E4525191B50610018C35A /* HHEmotionKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3E4523191B50610018C35A /* HHEmotionKeyboard.m */; };
 		BF49EA4218FD596C00331D8F /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49EA1318FD596C00331D8F /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
