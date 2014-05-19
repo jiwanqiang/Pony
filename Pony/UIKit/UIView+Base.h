@@ -92,6 +92,6 @@
  *
  *  @return YES, contains this view.
  */
-- (BOOL)containsView:(UIView *)view;
+//- (BOOL)containsView:(UIView *)view;
 
 @end

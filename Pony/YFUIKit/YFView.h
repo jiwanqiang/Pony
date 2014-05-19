@@ -96,6 +96,6 @@ typedef UIView YFView;
  *
  *  @return YES, contains this view.
  */
-- (BOOL)containsView:(YFView *)view;
+//- (BOOL)containsView:(YFView *)view;
 
 @end

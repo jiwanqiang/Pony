@@ -121,9 +121,9 @@
 }
 
 #pragma mark - Public Methods
-- (BOOL)containsView:(UIView *)view
-{
-	return [self.subviews containsObject:view];
-}
+//- (BOOL)containsView:(UIView *)view
+//{
+//	return [self.subviews containsObject:view];
+//}
 
 @end

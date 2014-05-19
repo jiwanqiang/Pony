@@ -108,9 +108,9 @@
 	self.frame = frame;
 }
 
-- (BOOL)containsView:(YFView *)view
-{
-	return [self.subviews containsObject:view];
-}
+//- (BOOL)containsView:(YFView *)view
+//{
+//	return [self.subviews containsObject:view];
+//}
 
 @end
