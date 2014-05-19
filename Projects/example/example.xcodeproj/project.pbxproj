@@ -10,6 +10,7 @@
 		BF2EAD35191CE13E00821E4A /* HHAirPlayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EAD33191CE13E00821E4A /* HHAirPlayButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BF3E4524191B50610018C35A /* HHEmotionKeyboard.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF3E4521191B50610018C35A /* HHEmotionKeyboard.bundle */; };
 		BF3E4525191B50610018C35A /* HHEmotionKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3E4523191B50610018C35A /* HHEmotionKeyboard.m */; };
+		BF4576411921C3E600E95BE7 /* NSString+HHDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = BF45763F1921C3E600E95BE7 /* NSString+HHDrawing.m */; };
 		BF49EA4218FD596C00331D8F /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49EA1318FD596C00331D8F /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BF49EA4318FD596C00331D8F /* NSData+Convert.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49EA1518FD596C00331D8F /* NSData+Convert.m */; };
 		BF49EA4418FD596C00331D8F /* NSFileHandle+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49EA1818FD596C00331D8F /* NSFileHandle+MD5.m */; };
@@ -65,6 +66,8 @@
 		BF3E4521191B50610018C35A /* HHEmotionKeyboard.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HHEmotionKeyboard.bundle; sourceTree = "<group>"; };
 		BF3E4522191B50610018C35A /* HHEmotionKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHEmotionKeyboard.h; sourceTree = "<group>"; };
 		BF3E4523191B50610018C35A /* HHEmotionKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHEmotionKeyboard.m; sourceTree = "<group>"; };
+		BF45763F1921C3E600E95BE7 /* NSString+HHDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HHDrawing.m"; sourceTree = "<group>"; };
+		BF4576401921C3E600E95BE7 /* NSString+HHDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HHDrawing.h"; sourceTree = "<group>"; };
 		BF49EA1218FD596C00331D8F /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		BF49EA1318FD596C00331D8F /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		BF49EA1418FD596C00331D8F /* NSData+Convert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Convert.h"; sourceTree = "<group>"; };
@@ -243,6 +246,8 @@
 		BF49EA1918FD596C00331D8F /* NSString */ = {
 			isa = PBXGroup;
 			children = (
+				BF4576401921C3E600E95BE7 /* NSString+HHDrawing.h */,
+				BF45763F1921C3E600E95BE7 /* NSString+HHDrawing.m */,
 				BF49EA1A18FD596C00331D8F /* NSString+AES.h */,
 				BF49EA1B18FD596C00331D8F /* NSString+AES.m */,
 				BF49EA1C18FD596C00331D8F /* NSString+Digest.h */,
@@ -541,6 +546,7 @@
 				BF49EA4318FD596C00331D8F /* NSData+Convert.m in Sources */,
 				BF49EA4E18FD596C00331D8F /* UILabel+AutoSize.m in Sources */,
 				BF49EA4B18FD596C00331D8F /* HHPollView.m in Sources */,
+				BF4576411921C3E600E95BE7 /* NSString+HHDrawing.m in Sources */,
 				BF49EA4C18FD596C00331D8F /* UIImage+Resize.m in Sources */,
 				BF49EA5118FD596C00331D8F /* UIViewController+Rotate.m in Sources */,
 				BF49EA5518FD596C00331D8F /* YFSystemInfo.m in Sources */,
