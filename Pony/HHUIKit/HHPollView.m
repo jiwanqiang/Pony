@@ -28,8 +28,7 @@
     #error This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
 #endif
 
-@interface HHPollView () <UIScrollViewDelegate>
-{
+@interface HHPollView () <UIScrollViewDelegate> {
 	BOOL _isAnimations;
 }
 
@@ -117,17 +116,17 @@
 	[self getDisplayContentsWithCurpage:_currentIndex];
 	
 	@autoreleasepool {
-		int visiableCount = (self.numberOfPages >= 2) ? 3 : 1;
+        int visiableCount = (self.numberOfPages >= 2) ? 3 : 1;
         UITapGestureRecognizer *singleTap;
-		for (int i = 0; i < visiableCount; i++) {
-			UIView *v = self.currentViews[i];
-			v.userInteractionEnabled = YES;
-			v.frame = CGRectOffset(v.frame, v.frame.size.width * i, 0);
+        UIView *v;
+        for (int i = 0; i < visiableCount; i++) {
+            v = self.currentViews[i];
+            v.userInteractionEnabled = YES;
+            v.frame = CGRectOffset(v.frame, v.frame.size.width * i, 0);
 			
             SEL act = @selector(handleTap:);
             singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:act];
 			[v addGestureRecognizer:singleTap];
-			
 			[_scrollView addSubview:v];
 		}
 	}
