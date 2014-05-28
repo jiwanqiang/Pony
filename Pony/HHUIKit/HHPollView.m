@@ -107,14 +107,13 @@
 
 - (void)loadData
 {
-	if ([_delegate respondsToSelector:@selector(pollView:didChangeItemAtIndex:)]) {
-		[_delegate pollView:self didChangeItemAtIndex:_currentIndex];
-	}
-	
-	[self removeSubviewsOfSuper:_scrollView];
-	
-	[self getDisplayContentsWithCurpage:_currentIndex];
-	
+    if ([_delegate respondsToSelector:@selector(pollView:didChangeItemAtIndex:)]) {
+        [_delegate pollView:self didChangeItemAtIndex:_currentIndex];
+    }
+    
+    [self removeSubviewsOfSuper:_scrollView];
+    [self getDisplayContentsWithCurpage:_currentIndex];
+    
 	@autoreleasepool {
         int visiableCount = (self.numberOfPages >= 2) ? 3 : 1;
         UITapGestureRecognizer *singleTap;
@@ -123,15 +122,15 @@
             v = self.currentViews[i];
             v.userInteractionEnabled = YES;
             v.frame = CGRectOffset(v.frame, v.frame.size.width * i, 0);
-			
+            
             SEL act = @selector(handleTap:);
             singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:act];
-			[v addGestureRecognizer:singleTap];
-			[_scrollView addSubview:v];
-		}
-	}
+            [v addGestureRecognizer:singleTap];
+            [_scrollView addSubview:v];
+        }
+    }
 	
-	[_scrollView setContentOffset:CGPointMake(_scrollView.frame.size.width, 0)];
+    [_scrollView setContentOffset:CGPointMake(_scrollView.frame.size.width, 0)];
 }
 
 - (void)getDisplayContentsWithCurpage:(NSUInteger)page
