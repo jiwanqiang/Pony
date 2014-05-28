@@ -25,11 +25,11 @@
 #import "HHPollView.h"
 
 #if ! __has_feature(objc_arc)
-    #error This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
+#error This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
 #endif
 
 @interface HHPollView () <UIScrollViewDelegate> {
-	BOOL _isAnimations;
+    BOOL _isAnimations;
 }
 
 @property (nonatomic, strong) NSTimer *timer;
@@ -46,45 +46,45 @@
 
 - (void)dealloc
 {
-	self.currentViews = nil;
-	[self endAutoRun];
+    self.currentViews = nil;
+    [self endAutoRun];
 }
 
 - (id)initWithFrame:(CGRect)frame
 {
-	self = [super initWithFrame:frame];
+    self = [super initWithFrame:frame];
 	
-	if (self) {
-		[self initialize];
-	}
+    if (self) {
+        [self initialize];
+    }
 	
-	return self;
+    return self;
 }
 
 - (void)awakeFromNib
 {
-	[super awakeFromNib];
-	[self initialize];
+    [super awakeFromNib];
+    [self initialize];
 }
 
 #pragma mark - Private Methods
 - (void)initialize
 {
-	_isAnimations = NO;
-	_timerInterval = 5;
-	
-	_scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
-	_scrollView.delegate = self;
-	_scrollView.pagingEnabled = YES;
-	_scrollView.showsHorizontalScrollIndicator = NO;
-	_scrollView.contentOffset = CGPointMake(self.bounds.size.width, 0);
-	_scrollView.contentSize = CGSizeMake(self.bounds.size.width * 3, self.bounds.size.height);
-	[self addSubview:_scrollView];
+    _isAnimations = NO;
+    _timerInterval = 5;
+    
+    _scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
+    _scrollView.delegate = self;
+    _scrollView.pagingEnabled = YES;
+    _scrollView.showsHorizontalScrollIndicator = NO;
+    _scrollView.contentOffset = CGPointMake(self.bounds.size.width, 0);
+    _scrollView.contentSize = CGSizeMake(self.bounds.size.width * 3, self.bounds.size.height);
+    [self addSubview:_scrollView];
 }
 
 - (void)autoScroll
 {
-	[_scrollView setContentOffset:CGPointMake(_scrollView.frame.size.width * 2, 0) animated:YES];
+    [_scrollView setContentOffset:CGPointMake(_scrollView.frame.size.width * 2, 0) animated:YES];
 }
 
 - (void)resetTimerState
@@ -100,9 +100,9 @@
 
 - (void)removeSubviewsOfSuper:(UIView*)view
 {
-	if (view.subviews.count != 0) {
-		[view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-	}
+    if (view.subviews.count != 0) {
+        [view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    }
 }
 
 - (void)loadData
@@ -114,7 +114,7 @@
     [self removeSubviewsOfSuper:_scrollView];
     [self getDisplayContentsWithCurpage:_currentIndex];
     
-	@autoreleasepool {
+    @autoreleasepool {
         int visiableCount = (self.numberOfPages >= 2) ? 3 : 1;
         UITapGestureRecognizer *singleTap;
         UIView *v;
@@ -129,44 +129,44 @@
             [_scrollView addSubview:v];
         }
     }
-	
+    
     [_scrollView setContentOffset:CGPointMake(_scrollView.frame.size.width, 0)];
 }
 
 - (void)getDisplayContentsWithCurpage:(NSUInteger)page
 {
-	NSUInteger pre = [self validPageValue:_currentIndex - 1];
-	NSUInteger last = [self validPageValue:_currentIndex + 1];
-	
-	if (!self.currentViews) {
-		self.currentViews = [NSMutableArray array];
-	} else {
-		[self.currentViews removeAllObjects];
-	}
+    NSUInteger pre = [self validPageValue:_currentIndex - 1];
+    NSUInteger last = [self validPageValue:_currentIndex + 1];
     
-	[self.currentViews addObject:[_dataSource pageAtIndex:pre]];
-	[self.currentViews addObject:[_dataSource pageAtIndex:page]];
-	[self.currentViews addObject:[_dataSource pageAtIndex:last]];
+    if (!self.currentViews) {
+        self.currentViews = [NSMutableArray array];
+    } else {
+        [self.currentViews removeAllObjects];
+    }
+    
+    [self.currentViews addObject:[_dataSource pageAtIndex:pre]];
+    [self.currentViews addObject:[_dataSource pageAtIndex:page]];
+    [self.currentViews addObject:[_dataSource pageAtIndex:last]];
 }
 
 - (NSUInteger)validPageValue:(NSInteger)value
 {
-	if (value == -1) {
-		value = self.numberOfPages - 1;
-	} else if (value == self.numberOfPages) {
-		value = 0;
-	}
-	
-	return value;
+    if (value == -1) {
+        value = self.numberOfPages - 1;
+    } else if (value == self.numberOfPages) {
+        value = 0;
+    }
+    
+    return value;
 }
 
 - (void)handleTap:(UITapGestureRecognizer *)tap
 {
-	if ( (tap.state == UIGestureRecognizerStateEnded) && !_isAnimations ) {
-		if ([_delegate respondsToSelector:@selector(pollView:didSelectItemAtIndex:)]) {
-			[_delegate pollView:self didSelectItemAtIndex:_currentIndex];
-		}
-	}
+    if ( (tap.state == UIGestureRecognizerStateEnded) && !_isAnimations ) {
+        if ([_delegate respondsToSelector:@selector(pollView:didSelectItemAtIndex:)]) {
+            [_delegate pollView:self didSelectItemAtIndex:_currentIndex];
+        }
+    }
 }
 
 #pragma mark - UIScrollView Delegate
@@ -182,61 +182,61 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-	_isAnimations = YES;
+    _isAnimations = YES;
 	
-	int x = scrollView.contentOffset.x;
-	if ( x >= (2 * self.frame.size.width) ) {
-		_currentIndex = [self validPageValue:_currentIndex+1];
-		[self loadData];
+    int x = scrollView.contentOffset.x;
+    if ( x >= (2 * self.frame.size.width) ) {
+        _currentIndex = [self validPageValue:_currentIndex+1];
+        [self loadData];
 	} else if (x <= 0) {
-		_currentIndex = [self validPageValue:_currentIndex-1];
-		[self loadData];
-	}
+        _currentIndex = [self validPageValue:_currentIndex-1];
+        [self loadData];
+    }
 	
-	_isAnimations = NO;
+    _isAnimations = NO;
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-	[_scrollView setContentOffset:CGPointMake(_scrollView.frame.size.width, 0) animated:YES];
+    [_scrollView setContentOffset:CGPointMake(_scrollView.frame.size.width, 0) animated:YES];
 }
 
 #pragma mark - Public Methods
 - (void)reloadData
 {
-	self.numberOfPages = [_dataSource numberOfPages];
-	
-	if (self.numberOfPages != 0) {
-		_currentIndex = 0;
-		[self loadData];
-	}
+    self.numberOfPages = [_dataSource numberOfPages];
+    
+    if (self.numberOfPages != 0) {
+        _currentIndex = 0;
+        [self loadData];
+    }
 }
 
 - (BOOL)beginAutoRun
 {
-	[self endAutoRun];
+    [self endAutoRun];
 	
-	self.timer = [NSTimer timerWithTimeInterval:_timerInterval
+    self.timer = [NSTimer timerWithTimeInterval:_timerInterval
                                          target:self
                                        selector:@selector(autoScroll)
                                        userInfo:nil
                                         repeats:YES];
-	if (self.timer) {
-		[[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
-		return YES;
-	}
+    if (self.timer) {
+        [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+        return YES;
+    }
 	
 	return NO;
 }
 
 - (BOOL)endAutoRun
 {
-	if ([self.timer isValid]) {
-		[self.timer invalidate];
-	}
-	self.timer = nil;
-	
-	return YES;
+    if ([self.timer isValid]) {
+        [self.timer invalidate];
+    }
+    self.timer = nil;
+    
+    return YES;
 }
 
 @end
