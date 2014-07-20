@@ -31,108 +31,100 @@
 
 @implementation YFModel
 
+#pragma mark - Initialize
 - (id)init
 {
-	self = [super init];
-	
-	if (self)
-	{
+    self = [super init];
+    
+    if (self) {
 		//custom init method
-	}
-	
-	return self;
+    }
+    
+    return self;
 }
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes
 {
-	self = [super init];
-	
-	if (self)
-	{
-		for (NSString *key in attributes.allKeys)
-		{
-			[self setValue:attributes[key] forKey:key];
-		}
-	}
-	
-	return self;
+    self = [super init];
+    
+    if (self) {
+        for (NSString *key in attributes.allKeys) {
+            [self setValue:attributes[key] forKey:key];
+        }
+    }
+    
+    return self;
 }
 
 + (instancetype)modelParseWithObject:(NSDictionary *)object
 {
-	return [self modelParseWithObject:object keys:[self generateKeys]];
+    return [self modelParseWithObject:object keys:[self generateKeys]];
 }
 
 + (instancetype)modelParseWithObject:(NSDictionary *)object keys:(NSDictionary *)keys
 {
-	@autoreleasepool
-	{
-		if (!object || ![object isKindOfClass:[NSDictionary class]])
-		{
+    @autoreleasepool {
+        if (!object || ![object isKindOfClass:[NSDictionary class]]) {
 #ifdef ERROR
-			ERROR(@"The param of object must not be nil and the class type must be NSDictionary.");
+            ERROR(@"The param of object must not be nil and the class type must be NSDictionary.");
 #endif
-			return nil;
-		}
+            return nil;
+        }
 		
-		NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
-		
-		for (NSString *key in keys.allKeys)
-		{
-			[attributes setObject:([object valueForKeyPath:keys[key]] ? [object valueForKeyPath:keys[key]] : @"") forKey:key];
-		}
-		
-		YFModel *model = [[self alloc] initWithAttributes:attributes];
-		return model;
-	}
+        NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+        
+        for (NSString *key in keys.allKeys) {
+            attributes[key] = object[keys[key]] ? object[keys[key]] : @"";
+        }
+        
+        YFModel *model = [[self alloc] initWithAttributes:attributes];
+        return model;
+    }
 }
 
 + (NSDictionary *)generateKeys
 {
-	return nil;
+    return nil;
 }
 
 #pragma mark - Super Methods
-
+#pragma mark -
 - (NSString *)description
 {
-	@autoreleasepool
-	{
-		NSMutableString *desc = [NSMutableString stringWithFormat:@"<%@ %p>\n{\n", NSStringFromClass([self class]), self];
+    @autoreleasepool {
+        NSMutableString *desc = [NSMutableString stringWithFormat:@"<%@ %p>\n{\n",
+                                 NSStringFromClass([self class]), self];
+        
+        NSDictionary *attributes = [self dictionaryReflectFromAttributes];
+        
+        for (NSString *key in attributes) {
+            [desc appendFormat:@"\t%@ = %@,\n", key, attributes[key] ? attributes[key] : @"<null>"];
+        }
 		
-		NSDictionary *attributes = [self dictionaryReflectFromAttributes];
-		
-		for (NSString *key in attributes)
-		{
-			[desc appendFormat:@"\t%@ = %@,\n", key, attributes[key] ? attributes[key] : @"<null>"];
-		}
-		
-		[desc appendString:@"}"];
-		return desc;
-	}
+        [desc appendString:@"}"];
+        return desc;
+    }
 }
 
 #pragma mark - NSCoding Methods
-
+#pragma mark -
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         unsigned int count = 0;
-		objc_property_t *attributes = class_copyPropertyList([self class], &count);
-		objc_property_t property;
-		NSString *key;
+        objc_property_t *attributes = class_copyPropertyList([self class], &count);
+        objc_property_t property;
+        NSString *key;
 		
-		for (int i = 0; i < count; i++)
-		{
-			property = attributes[i];
-			key = [NSString stringWithUTF8String:property_getName(property)];
+        for (int i = 0; i < count; i++) {
+            property = attributes[i];
+            key = [NSString stringWithUTF8String:property_getName(property)];
             [self setValue:[aDecoder decodeObjectForKey:key] forKey:key];
-		}
-		
-		free(attributes);
-		attributes = nil;
+        }
+        
+        free(attributes);
+        attributes = nil;
     }
     
     return self;
@@ -146,8 +138,7 @@
     NSString *key;
     id value;
     
-    for (int i = 0; i < count; i++)
-    {
+    for (int i = 0; i < count; i++) {
         property = attributes[i];
         key = [NSString stringWithUTF8String:property_getName(property)];
         value = [self valueForKey:key];
@@ -159,7 +150,7 @@
 }
 
 #pragma mark - NSCopying Methods
-
+#pragma mark -
 - (id)copyWithZone:(NSZone *)zone
 {
     // To-Do
@@ -167,63 +158,63 @@
 }
 
 #pragma mark - Public Methods
-
+#pragma mark -
 - (NSDictionary *)dictionaryReflectFromAttributes
 {
-	@autoreleasepool
-	{
-		NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-		
-		unsigned int count = 0;
-		objc_property_t *attributes = class_copyPropertyList([self class], &count);
-		objc_property_t property;
-		NSString *key;
+    @autoreleasepool {
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        
+        unsigned int count = 0;
+        objc_property_t *attributes = class_copyPropertyList([self class], &count);
+        objc_property_t property;
+        NSString *key;
         id value;
+        
+        for (int i = 0; i < count; i++) {
+            property = attributes[i];
+            key = [NSString stringWithUTF8String:property_getName(property)];
+            value = [self valueForKey:key];
+            [dict setObject:(value ? value : @"") forKey:key];
+        }
 		
-		for (int i = 0; i < count; i++)
-		{
-			property = attributes[i];
-			key = [NSString stringWithUTF8String:property_getName(property)];
-			value = [self valueForKey:key];
-			[dict setObject:(value ? value : @"") forKey:key];
-		}
-		
-		free(attributes);
-		attributes = nil;
-		
-		return dict;
-	}
+        free(attributes);
+        attributes = nil;
+        
+        return dict;
+    }
 }
 
 - (void)parseWithJSON:(id)JSON keys:(NSDictionary *)keys
 {
-	//TO-DO
+    //TO-DO
 }
 
 - (NSString *)JSONString
 {
     NSDictionary *dict = [self dictionaryReflectFromAttributes];
     NSError *error;
-	NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
     
-    if (jsonData.length > 0 && !error)
-    {
-        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    if (jsonData.length > 0 && !error) {
+        NSString *jsonString = [[NSString alloc] initWithData:jsonData
+                                                     encoding:NSUTF8StringEncoding];
         return jsonString;
     }
     
-	return nil;
+    return nil;
 }
 
 - (NSString *)XMLString
 {
-	//TO-DO
-	return nil;
+    //TO-DO
+    return nil;
 }
 
 - (NSDictionary *)generateKeys
 {
-	return [[self class] generateKeys];
+    return [[self class] generateKeys];
 }
 
 @end
