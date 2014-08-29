@@ -34,10 +34,19 @@
 - (BOOL)isMobileNumber;
 
 /**
- *  Match the E-mail address,return the match result.But it should be update,because the top-level domain has been updated.
+ *  Match the E-mail address,return the match result.But it should be update,
+ *  because the top-level domain has been updated.
  *
  *  @return Yes is E-mail address
  */
 - (BOOL)isEmailAddress;
+
+/**
+ *  Math the String wheter contains the emoji symbol
+ *
+ *  @param  emojiSymbol the emoji symbol that first matched
+ *  @return Yes is means it contains emoji
+ */
+- (BOOL)containsEmojiSymbol:(NSString *__autoreleasing *)emojiSymbol;
 
 @end
