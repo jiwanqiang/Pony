@@ -119,16 +119,16 @@ int convertHexChar(char hex_char)
 	
 	//operate
 	CCCryptorStatus cryptStatus = CCCrypt(op,
-										  kCCAlgorithmAES128,
-										  kCCOptionPKCS7Padding,
-										  keyPtr,
-										  keySize,
-										  piv,
-										  dataIn,
-										  dataLength,
-										  buffer,
-										  bufferSize,
-										  &dataOutMoved);
+                                          kCCAlgorithmAES128,
+                                          kCCOptionPKCS7Padding,
+                                          keyPtr,
+                                          keySize,
+                                          piv,
+                                          dataIn,
+                                          dataLength,
+                                          buffer,
+                                          bufferSize,
+                                          &dataOutMoved);
 	
 	if (cryptStatus == kCCSuccess)
 	{
