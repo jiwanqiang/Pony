@@ -24,7 +24,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define CRYPT_RESULT_ENCODE_WAY (1) //1 hex 0 base64
+#define CRYPT_RESULT_ENCODE_WAY (0) //1 hex 0 base64
 
 #if defined(CRYPT_RESULT_ENCODE_WAY) && CRYPT_RESULT_ENCODE_WAY
 
