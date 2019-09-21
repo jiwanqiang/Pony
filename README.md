@@ -1,4 +1,5 @@
-# Pony  [![Build Status](https://api.travis-ci.org/jiwanqiang/Pony.png)](https://travis-ci.org/jiwanqiang/Pony)
+# Pony  
+[![Build Status](https://api.travis-ci.org/jiwq/Pony.png)](https://travis-ci.org/jiwq/Pony)
 
 ## Origin
 
