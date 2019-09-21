@@ -1,5 +1,5 @@
 # Pony  
-[![Build Status](https://api.travis-ci.org/jiwq/Pony.png)](https://travis-ci.org/jiwq/Pony)
+[![Build Status](https://travis-ci.org/jiwq/Pony.svg?branch=master)](https://travis-ci.org/jiwq/Pony)
 
 ## Origin
 
